@@ -2,7 +2,7 @@
 {
     background: linear-gradient(#2E335A, #1C1B33);
     position: fixed;
-    inset: 0 70% 0 0;
+    inset: 0 80% 0 0;
     color: rgba(255, 255, 255, 0.6);
     display: flex;
     flex-direction: column;
@@ -42,4 +42,43 @@
     text-align: center;
 }
 
-
+.thanks-to
+{
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+.thanks-to button
+{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0.11);
+}
+.thanks-to button:hover
+{
+    background-color: #48CB3D;
+    cursor: pointer;
+    color: whitesmoke;
+    transition: .5s ease-in-out ;
+    transform: rotate(360deg);
+    font-size: 20px;
+}
+.thanks-div{
+    
+    background-color: rgba(255, 255, 255, 0.582);
+    color: black;
+    border-radius: 5px;
+    text-align: center;
+    min-height: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    left: 0;
+    
+}

@@ -31,20 +31,30 @@ function Naviagation ()
           <li>
             <div className="naviagation-content">
             <Link to="/">
-                <AiFillHome style={iconStyle}/>
-                <p>Home</p>
+                <MdVideoLibrary style={iconStyle}/>
+                <p>Library</p>
                 </Link>
             </div>
           </li>
           <li>
             <div className="naviagation-content">
             <Link to="/">
-                <AiFillHome style={iconStyle}/>
-                <p>Home</p>
+                <IoAdd style={iconStyle}/>
+                <p>Add</p>
                 </Link>
             </div>
           </li>
         </ul>
+        <div className="thanks-div">
+            <h1>thanks to:</h1>
+            <h3>Figma for design</h3>
+            <h3>freePic for assets</h3>
+            <h3>Ing for idea for project</h3>
+            
+          </div>
+        <div className="thanks-to">
+          <button>?</button>
+        </div>
         </section>
     )
 }
