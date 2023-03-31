@@ -20,28 +20,28 @@ function Naviagation ()
         <p>Hi kuba</p>
         </div>
         <ul>
-          <li >
+          <li>
             <div className="naviagation-content">
-            <AiFillHome style={iconStyle}/>
-              <div>
-                <Link to="/">Home</Link>
-              </div>
+                <Link to="/">
+                <AiFillHome style={iconStyle}/>
+                <p>Home</p>
+                </Link>
             </div>
           </li>
           <li>
             <div className="naviagation-content">
-            <MdVideoLibrary style={iconStyle}/>
-              <div>
-                <Link to="/">Library</Link>
-              </div>
+            <Link to="/">
+                <AiFillHome style={iconStyle}/>
+                <p>Home</p>
+                </Link>
             </div>
           </li>
           <li>
             <div className="naviagation-content">
-            <IoAdd style={iconStyle}/>
-              <div>
-                <Link to="/">Add</Link>
-              </div>
+            <Link to="/">
+                <AiFillHome style={iconStyle}/>
+                <p>Home</p>
+                </Link>
             </div>
           </li>
         </ul>
