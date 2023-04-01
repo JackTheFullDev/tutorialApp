@@ -1,4 +1,4 @@
-.naviagtion
+.navigation
 {
     background: linear-gradient(#2E335A, #1C1B33);
     position: fixed;
@@ -7,13 +7,15 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
+    
+    
    
 }
-.naviagtion li{
+.navigation li{
     list-style-type:none; 
 }
 
-.naviagation-content a 
+.navigation-content a 
 {
     text-decoration: none;
     color: white;
@@ -24,7 +26,7 @@
 }
 
 
-.naviagation-content:hover , .naviagation-content a:hover
+.navigation-content:hover , .navigation-content a:hover
 {
     transform: translateY(-2px);
     transition: .3s ease-in-out;
@@ -94,4 +96,35 @@
     {
         opacity: 1;
     }
+}
+
+@media only screen and (max-width: 550px)
+{
+    .navigation
+    {
+       position: relative;
+       gap: 0;
+
+    }
+    .user-navigation
+    {
+        max-height: 10vh;
+    }
+    #user-profile-img
+    {
+        display: none;
+    }
+    #user-name
+    {
+        display: none;
+    }
+    .thanks-div
+    {
+        bottom: 0;
+    }
+    .thanks-to button
+    {
+        margin-right: 10px;
+    }
+    
 }
