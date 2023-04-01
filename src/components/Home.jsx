@@ -4,9 +4,21 @@ function Home ()
 {
 
  return(
-        <div>
-            <p>home</p>
-        </div>
+        <section className='home-section'>
+            <div className='home-content'>
+                <div className='searchBar'>
+                <input className='searchbar-input' placeholder='search'/>
+                <button>xd</button>
+                </div>
+                <div className='grid-with-home-content'>
+                    <div>
+                        dsadasdads
+                    </div>
+                    
+                </div>
+            </div>
+
+        </section>
     )
 }
 
