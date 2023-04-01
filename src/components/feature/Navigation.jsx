@@ -65,13 +65,9 @@ export const Navigation = () => {
         >?
         </button>
         <button
-          onMouseEnter={() => handleThanks(false)}
-          onMouseLeave={() => handleThanks(true)}
         ><AiOutlineArrowUp/>
         </button>
         <button
-          onMouseEnter={() => handleThanks(false)}
-          onMouseLeave={() => handleThanks(true)}
         ><AiOutlineArrowDown/>
         </button>
       </div>

@@ -2,7 +2,7 @@
 {
     background: linear-gradient(#2E335A, #1C1B33);
     position: fixed;
-    inset: 0 80% 0 0;
+    inset: 0 90% 0 0;
     color: rgba(255, 255, 255, 0.6);
     display: flex;
     flex-direction: column;
@@ -98,17 +98,12 @@
     }
 }
 
-@media only screen and (max-width: 550px)
+@media only screen and (max-width: 980px)
 {
     .navigation
     {
        position: relative;
        gap: 0;
-
-    }
-    .user-navigation
-    {
-        max-height: 10vh;
     }
     #user-profile-img
     {
@@ -125,6 +120,14 @@
     .thanks-to button
     {
         margin-right: 10px;
+        display: none;
+    }
+    ul
+    {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
     }
     
 }
