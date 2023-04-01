@@ -1,8 +1,15 @@
+import { useState } from "react"
+import  "./Add.css";
 
-function Add ()
+export const Add = () =>
 {
+
+    const [test,setTest] =useState(0)
     return(
-        <p>add</p>
+        <section className="add-section">
+            <p>{test}</p>
+            <button onClick={() =>setTest(test + 1)}>click</button>
+        </section>
     )
 }
 

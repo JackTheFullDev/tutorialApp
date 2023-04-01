@@ -1,19 +1,21 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
 import Home from "./components/home";
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Navigation from "./components/feature/Navigation";
+
 import Library from "./components/Library";
 import Add from "./components/Add";
+import {Navigation} from "./components/feature/Navigation";
+
+
 function App() {
 
   return (
     <div className="App">
       <Router>
-        {Navigation}
+      <Navigation/>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/library" element={<Library />}></Route>

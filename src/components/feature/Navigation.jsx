@@ -1,6 +1,5 @@
 
 import { Link } from "react-router-dom"
-import { FaBeer } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 import { MdVideoLibrary } from "react-icons/md";
 import { IoAdd } from "react-icons/io5";
@@ -8,10 +7,19 @@ import reactLogo from './../../assets/user.png';
 
 
 import "./Navigation.css";
-function Naviagation ()
+import { useState } from "react";
+ export const  Navigation = () =>
 {
-  const iconStyle={ color: "white", fontSize: "1.5em"}
- 
+const iconStyle={ color: "white", fontSize: "1.5em"};
+ const [isThanksShown,setIsThanksShown]=useState(false);
+
+ const handleThanks =(state) =>
+ {
+  const thanksDiv=document.querySelector(".thanks-div");
+  setIsThanksShown(state);
+  isThanksShown?thanksDiv.style.display="flex":thanksDiv.style.display="none";
+ }
+
     return(
       <section className="naviagtion">
         
@@ -38,7 +46,7 @@ function Naviagation ()
           </li>
           <li>
             <div className="naviagation-content">
-            <Link to="/">
+            <Link to="/add">
                 <IoAdd style={iconStyle}/>
                 <p>Add</p>
                 </Link>
@@ -53,10 +61,10 @@ function Naviagation ()
             
           </div>
         <div className="thanks-to">
-          <button>?</button>
+          <button onMouseEnter={()=>handleThanks(false)} onMouseLeave={()=>handleThanks(true)} >?</button>
         </div>
         </section>
     )
 }
   
-export default Naviagation()
+export default Navigation;
