@@ -4,7 +4,7 @@ import { MdVideoLibrary } from "react-icons/md";
 import { IoAdd } from "react-icons/io5";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { AiOutlineArrowDown } from "react-icons/ai";
-import reactLogo from "./../../assets/user.png";
+import reactLogo from "/assets/user.png";
 
 import "./Navigation.css";
 import { useState } from "react";

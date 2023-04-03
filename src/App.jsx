@@ -9,7 +9,7 @@ import Library from "./components/Library";
 import Add from "./components/Add";
 import {Navigation} from "./components/feature/Navigation";
 
-
+import tutorialImg from "./data.json";
 function App() {
 
   return (
@@ -17,7 +17,7 @@ function App() {
       <Router>
       <Navigation/>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home/>}></Route>
           <Route path="/library" element={<Library />}></Route>
           <Route path="/add" element={<Add />}></Route>
         </Routes>

@@ -12,35 +12,35 @@
         "tutorialName":"Create modern dynamic pages with HTML5 - Advanced course with projects.",
         "canalName":"Web-master",
         "totalHour":11,
-        "Image": "./assets/python-tutorial.jpg"
+        "Image": "./assets/html-tutorial.jpg"
         
     },
     {
         "tutorialName":"Cybersecurity crash course in 24h! - Learn how to be secure in modern  world.        ",
         "canalName":"Cyber-master ",
         "totalHour":15,
-        "Image": "./assets/python-tutorial.jpg"
+        "Image": "./assets/cyber-tutorial.jpg"
         
     },
     {
         "tutorialName":"Understand basic concept of UI design -UI for beginners.",
         "canalName":"UI-master ",
         "totalHour":10,
-        "Image": "./assets/python-tutorial.jpg"
+        "Image": "./assets/ui-tutorial.jpg"
         
     },
     {
         "tutorialName":"Backend ease like never - Few application with node.js",
         "canalName":"Node-master ",
         "totalHour":4,
-        "Image": "./assets/python-tutorial.jpg"
+        "Image": "./assets/node-tutorial.jpg"
         
     },
     {
         "tutorialName":"Master your ES6  and become JavaScript developer- Do or not there is no try",
         "canalName":"Python-master ",
         "totalHour":14,
-        "Image": "./assets/python-tutorial.jpg"
+        "Image": "./assets/es6-tutorial.jpg"
         
     }
 ]

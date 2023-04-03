@@ -88,9 +88,11 @@ letter-spacing: 1px;
 }
 .tutorial-component img
 {
-    max-width: 100%;
+    width: 100%;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
+    height:300px;
+    
     
 }
 .bottom-totalhour-likes
@@ -130,4 +132,12 @@ letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.6);
     font-size: 17px;
     margin-top: 5px;
+}
+
+@media only screen and (max-width: 980px)
+{
+    .home-section
+    {
+        margin: 0;
+    }
 }

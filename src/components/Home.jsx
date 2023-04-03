@@ -1,13 +1,10 @@
 import "./Home.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import tutorialData from "../data.json";
-import pythonImg from "../assets/python-tutorial.jpg";
-import htmlImg from "../assets/html-tutorial.jpg";
-import cyberImg from "../assets/cyber-tutorial.jpg";
+import pythonImg from "/assets/python-tutorial.jpg";
 
 function Home() {
-  console.log(tutorialData.video[0]);
-  const videoTest = tutorialData.video[0];
+ 
   return (
     <section className="home-section">
       <div className="home-content">
@@ -16,10 +13,10 @@ function Home() {
           <AiOutlineSearch id="search-icon" />
         </div>
         <div className="grid-with-home-content">
-        {tutorialData.video.map((data) => {
+        {tutorialData.video.map((data,index) => {
     return (
-        <div className="tutorial-component">
-            <img src={pythonImg} />
+        <div className="tutorial-component" key={index}> 
+             <img src={data.Image} alt={data.tutorialName} />
             <div className="inner-info-content">
                 <h1 id="tutorial-name">{data.tutorialName}</h1>
                 <p id="canal-name">{data.canalName}</p>
@@ -29,6 +26,7 @@ function Home() {
                         <p>{data.totalHour}Likes</p>
                     </div>
                     <button>Register</button>
+                    {console.log(data.Image)}
                 </div>
             </div>
         </div>
