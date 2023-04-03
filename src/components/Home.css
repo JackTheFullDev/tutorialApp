@@ -2,8 +2,8 @@
 { 
     display: flex;
     justify-content: center;
-    margin-left: 10%;
     
+    margin-left: 10%;
     
 }
 .home-content
@@ -15,7 +15,6 @@
     align-items: center;
     margin-top: 20px;
     
-  
 
 }
 .grid-with-home-content

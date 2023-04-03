@@ -4,7 +4,8 @@
     {
         "tutorialName":"pythonForBegin",
         "canalName":"canal-nameTest",
-        "totalHour":24
+        "totalHour":24,
+        "Image": "./assets/python-tutorial.jpg"
     }
 ]
 
