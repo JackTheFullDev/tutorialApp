@@ -55,8 +55,8 @@ export const Navigation = () => {
       <div className="thanks-div">
         <h1>thanks to:</h1>
         <h3>Figma for design</h3>
-        <h3>freePic for assets</h3>
-        <h3>Ing for idea for project</h3>
+        <h3>pexels for assets</h3>
+        <h3>Ing for idea project</h3>
       </div>
       <div className="thanks-to">
         <button

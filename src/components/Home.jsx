@@ -22,14 +22,16 @@ function Home ()
                 <div className='grid-with-home-content'>
                     <div className='tutorial-component'>
                         <img src={pythonImg}/>
-                        <h1>{videoTest.tutorialName}</h1>
-                        <p>{videoTest.canalName}</p>
+                       <div className='inner-info-content'>
+                       <h1 id='tutorial-name'>{videoTest.tutorialName}</h1>
+                        <p id='canal-name'>{videoTest.canalName}</p>
                         <div className='bottom-tutorial-components'>
                             <div className='bottom-totalhour-likes'>
                             <p>{videoTest.totalHour}h video</p>
                             <p>{videoTest.totalHour}Likes</p>
                             </div>
                             <button>Register</button>
+                        </div>
                         </div>
                     </div> 
                     <div>
