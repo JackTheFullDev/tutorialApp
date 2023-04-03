@@ -1,6 +1,10 @@
 import './Home.css'
 import { AiOutlineSearch } from "react-icons/ai";
 import tutorialData from '../data.json'
+import pythonImg from '../assets/python-tutorial.jpg'
+import htmlImg from '../assets/html-tutorial.jpg'
+import cyberImg from '../assets/cyber-tutorial.jpg'
+
 
 function Home ()
 {
@@ -16,11 +20,17 @@ function Home ()
                 <AiOutlineSearch id='search-icon'/>
                 </div>
                 <div className='grid-with-home-content'>
-                    <div>
-                        <img src={videoTest.Image}/>
+                    <div className='tutorial-component'>
+                        <img src={pythonImg}/>
                         <h1>{videoTest.tutorialName}</h1>
-                        <p>canal-name</p>
-                        <p>hour-likes</p>
+                        <p>{videoTest.canalName}</p>
+                        <div className='bottom-tutorial-components'>
+                            <div className='bottom-totalhour-likes'>
+                            <p>{videoTest.totalHour}h video</p>
+                            <p>{videoTest.totalHour}Likes</p>
+                            </div>
+                            <button>Register</button>
+                        </div>
                     </div> 
                     <div>
                         <img/>

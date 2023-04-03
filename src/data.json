@@ -2,10 +2,18 @@
     "video":
 [
     {
-        "tutorialName":"pythonForBegin",
-        "canalName":"canal-nameTest",
-        "totalHour":24,
+        "tutorialName":"Get new pet and start to earn money -Python for begginers.",
+        "canalName":"Python-master ",
+        "totalHour":14,
         "Image": "./assets/python-tutorial.jpg"
+        
+    },
+    {
+        "tutorialName":"Create modern dynamic pages with HTML5 - Advanced course with projects.",
+        "canalName":"Web-master",
+        "totalHour":11,
+        "Image": "./assets/python-tutorial.jpg"
+        
     }
 ]
 

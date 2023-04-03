@@ -72,3 +72,38 @@ letter-spacing: 1px;
     justify-content: start;
     
 }
+.tutorial-component
+{
+    max-width: 300px;
+    border-radius: 10px;
+    margin-top: 15px;
+    background: linear-gradient(#48319D,#48319d00);
+    box-shadow: 8px 8px 24px -17px rgb(0, 7, 87);
+}
+
+.tutorial-component img
+{
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    
+}
+.bottom-totalhour-likes
+{
+    display: flex;
+    gap: 10px;
+}
+.bottom-tutorial-components
+{
+    display: flex;
+    justify-content: space-between;
+}
+.bottom-tutorial-components button 
+{
+    background-color: transparent;
+    border: none;
+    color:  #1bd40a;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
