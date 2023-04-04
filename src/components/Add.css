@@ -6,10 +6,16 @@
     align-items: center;
     height: 80vh;
     font-family: 'Jura', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+
 }
 .left-add-section
 {
-    max-width: 300px;
+    max-width: 350px;
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
 
     
 }
@@ -19,23 +25,28 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: start;
+   
+}
+.checkboxes-add-section
+{   
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
     border: 1px dashed #138C18;
     border-radius: 5px;
 }
 .date-add-section
 {
     display: flex;
+    gap:10px;
 }
 .checkboxes-inner-content-add-section
 {
     display: flex;
     gap: 2px;
 }
-#test-input
-{
-    accent-color: #138C18;
-    
-}
+
 .levels-content-add-section
 {
     display: flex;
@@ -58,3 +69,40 @@
     font-size: 12px;
     color: whitesmoke;
 }
+.checkbox-input-add-section
+{
+    accent-color: #48CB3D;
+}
+.add-section input
+{
+    background-color: #DFDADA;
+    outline: none;
+    padding: 13px;
+    border-radius: 6px;
+    border:none;
+    font-weight: bold;
+}
+.time-add-section
+{
+    display: flex;
+    gap: 10px;
+}
+.create-trening-button-add-section
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.add-section-button
+{
+    border: none;
+    background-color: transparent;
+    color: #57f049;
+    cursor: pointer;
+    max-width: 150px;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
+    font-size: 20px;
+}
+
+
