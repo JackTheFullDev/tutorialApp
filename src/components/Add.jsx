@@ -1,34 +1,36 @@
 
+import { MdWidthFull } from "react-icons/md";
 import  "./Add.css";
 
+import { AiOutlineUpload } from "react-icons/ai";
 export const Add = () =>
 {
-
+    const iconStyle = { color: "white", fontSize: "10em" };
     return(
         <section className="add-section">
           <div className="left-add-section">
           <h1>Create <span>New</span> Tutorial</h1>
           <div className="label-input-add-section">
-            <p>Tutorial Name</p>
+            <p className="info-small-label">Tutorial Name</p>
             <input type="text" placeholder="Name..."/>
           </div>
           <div className="date-add-section">
             <div>
-                <p>Start Date</p>
+                <p  className="info-small-label">Start Date</p>
                 <input type="date"/>
             </div>
             <div>
-                <p>Start Date</p>
+                <p className="info-small-label" >Start Date</p>
                 <input type="date"/>
             </div>
           </div>
           <div className="time-add-section">
             <div>
-                <p>Start time</p>
+                <p className="info-small-label">Start time</p>
                 <input type="time"/>
             </div>
             <div>
-                <p>End time</p>
+                <p  className="info-small-label">End time</p>
                 <input type="time"/>
             </div>
           </div>
@@ -65,12 +67,12 @@ export const Add = () =>
                     <p>Saturday</p>
                     </div>
                 </div>
-                <h2><span>Enter</span>Location</h2>
+                <h2><span>Enter</span> Location</h2>
                 <div className="label-input-add-section">
-                <p>Location Name</p>
+                <p className="info-small-label">Location Name</p>
                 <input type="text" placeholder="Name..."/>
                 </div>
-                <h3>Choose your <span>training</span>level</h3>
+                <h3>Choose your <span>training</span> level</h3>
 
             </div>
             <div className="level-slider-add-section"> 
@@ -87,6 +89,13 @@ export const Add = () =>
         <button> Create Trening</button>
           </div>
           <div className="right-add-section"> 
+
+            <div className="right-content-add-section">
+                <div className="upload-image-content-add-section">
+                <AiOutlineUpload style={iconStyle} />
+                </div>
+                <button>Upload Img</button>
+            </div>
           </div>
             
         </section>

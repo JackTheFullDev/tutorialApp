@@ -1,15 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
 .add-section
 {
     display: flex;
-    flex-direction: column;
-    margin-left: 10%;
-    background-color: red;
-
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80vh;
+    font-family: 'Jura', sans-serif;
 }
 .left-add-section
 {
     max-width: 300px;
-    background-color: blue;
+
     
 }
 .dayOfTheWeek-add-section
@@ -43,4 +44,17 @@
 .level-slider-add-section input
 {
     width: 100%;
+}
+.upload-image-content-add-section
+{
+    border: 1px solid white;
+}
+.add-section span
+{
+    color: #48CB3D;
+}
+.info-small-label
+{
+    font-size: 12px;
+    color: whitesmoke;
 }
