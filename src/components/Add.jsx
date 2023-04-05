@@ -84,7 +84,7 @@ export const Add = () => {
             <p>Advanced</p>
             <p>Master</p>
           </div>
-          <input type="range" />
+          <input type="range" min="0" max="4" step="1" />
         </div>
         <div className="create-trening-button-add-section">
         <button className="add-section-button"> Create Trening</button>
