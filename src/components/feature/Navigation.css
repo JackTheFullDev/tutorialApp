@@ -86,6 +86,11 @@
     animation-duration: 1s;
     animation-name: fade-in;
 }
+
+a .current-page
+{
+    color: #48CB3D;
+}
 @keyframes fade-in
 {
     from{

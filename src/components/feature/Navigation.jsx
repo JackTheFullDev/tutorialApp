@@ -11,6 +11,7 @@ import { useState } from "react";
 export const Navigation = () => {
   const iconStyle = { color: "white", fontSize: "1.5em" };
   const [isThanksShown, setIsThanksShown] = useState(true);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const handleThanks = (state) => {
     const thanksDiv = document.querySelector(".thanks-div");
@@ -19,7 +20,11 @@ export const Navigation = () => {
       ? (thanksDiv.style.display = "flex")
       : (thanksDiv.style.display = "none");
   };
-
+  const handleCurrentPage = (_currentPageNumber) =>
+  {
+    setCurrentPage(_currentPageNumber);
+    console.log(currentPage);
+  }
   return (
     <section className="navigation">
       <div className="user-navigation">
@@ -29,25 +34,25 @@ export const Navigation = () => {
       <ul>
         <li>
           <div className="navigation-content">
-            <Link to="/">
+            <Link to="/" onClick={()=>handleCurrentPage(1)}>
               <AiFillHome style={iconStyle} />
-              <p>Home</p>
+              <p className={currentPage===1?"current-page":null}>Home</p>
             </Link>
           </div>
         </li>
         <li>
           <div className="navigation-content">
-            <Link to="/">
+            <Link to="/library" onClick={()=>handleCurrentPage(2)} >
               <MdVideoLibrary style={iconStyle} />
-              <p>Library</p>
+              <p  className={currentPage===2?"current-page":null}>Library</p>
             </Link>
           </div>
         </li>
         <li>
           <div className="navigation-content">
-            <Link to="/add">
+            <Link to="/add" onClick={()=>handleCurrentPage(3)} >
               <IoAdd style={iconStyle} />
-              <p>Add</p>
+              <p  className={currentPage===3?"current-page":null}>Add</p>
             </Link>
           </div>
         </li>
