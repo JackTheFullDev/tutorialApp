@@ -1,8 +1,14 @@
 import { MdWidthFull } from "react-icons/md";
 import "./Add.css";
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
 
 import { AiOutlineUpload } from "react-icons/ai";
 export const Add = () => {
+  function valuetext(value) {
+    return `${value}°C`;
+  }
+
   const iconStyle = { color: "white", fontSize: "10em" };
   return (
     <section className="add-section">
@@ -44,7 +50,7 @@ export const Add = () => {
               <p>Monday</p>
             </div>
             <div className="checkboxes-inner-content-add-section">
-              <input  className="checkbox-input-add-section" type="checkbox" />
+              <input className="checkbox-input-add-section" type="checkbox" />
               <p>Tuesday</p>
             </div>
             <div className="checkboxes-inner-content-add-section">
@@ -87,9 +93,8 @@ export const Add = () => {
           <input type="range" min="0" max="4" step="1" />
         </div>
         <div className="create-trening-button-add-section">
-        <button className="add-section-button"> Create Trening</button>
+          <button className="add-section-button"> Create Trening</button>
         </div>
-        
       </div>
       <div className="right-add-section">
         <div className="right-content-add-section">
@@ -98,6 +103,22 @@ export const Add = () => {
           </div>
           <button className="add-section-button">Upload Img</button>
         </div>
+        <Box sx={{
+           width: 300
+           }}
+           >
+          <Slider
+            aria-label="big steps"
+            defaultValue={0}
+            getAriaValueText={valuetext}
+            step={1}
+            marks
+            min={0}
+            max={4}
+            color="secondary"
+          />
+          
+        </Box>
       </div>
     </section>
   );

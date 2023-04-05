@@ -162,9 +162,27 @@ input[type=range]::-moz-range-thumb {
     border-radius: 50%;
     border:2px solid #105955;
 }
+.css-14pt78w-MuiSlider-rail
+{
+background-color: #A5E0DD!important;
+opacity: 1!important;
+padding: 3px;
+}
+.css-1gv0vcd-MuiSlider-track
+{
+    color: #105955!important;
 
+    padding: 2px;
+}
+.css-frv3qg-MuiSlider-thumb
+{
+    background: #A5E0DD !important;
+}
 
-
+.css-6cwnna-MuiSlider-mark
+{
+ opacity: 1!important;
+}
 @media only screen  and (max-width:540px) {
     .add-section
     {
