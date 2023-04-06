@@ -4,11 +4,19 @@ import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 
 import { AiOutlineUpload } from "react-icons/ai";
+import { useState } from "react";
+
+
 export const Add = () => {
-  function valuetext(value) {
-    return `${value}°C`;
+ 
+
+  const handleLevelValue = (event,newLevelValue) =>
+  {
+    setLevelState(newLevelValue);
+  
   }
 
+  const [levelState,setLevelState]=useState(0);
   const iconStyle = { color: "white", fontSize: "10em" };
   return (
     <section className="add-section">
@@ -84,13 +92,31 @@ export const Add = () => {
         </div>
         <div className="level-slider-add-section">
           <div className="levels-content-add-section">
-            <p>Entry</p>
-            <p>Begginer</p>
-            <p>Junior</p>
-            <p>Advanced</p>
-            <p>Master</p>
+            <p className={levelState===0?"active":null}>Entry</p>
+            <p className={levelState===1?"active":null}>Begginer</p>
+            <p className={levelState===2?"active":null}>Junior</p>
+            <p className={levelState===3?"active":null}>Advanced</p>
+            <p className={levelState===4?"active":null}>Master</p>
           </div>
-          <input type="range" min="0" max="4" step="1" />
+        
+          <Box sx={{
+           width: 360
+           }}
+           >
+          <Slider
+            aria-label="big steps"
+            defaultValue={0}
+            step={1}
+            marks
+            min={0}
+            max={4}
+            color="secondary"
+            onChange={handleLevelValue}
+            value={levelState}
+          />
+          
+        </Box>
+
         </div>
         <div className="create-trening-button-add-section">
           <button className="add-section-button"> Create Trening</button>
@@ -103,22 +129,6 @@ export const Add = () => {
           </div>
           <button className="add-section-button">Upload Img</button>
         </div>
-        <Box sx={{
-           width: 300
-           }}
-           >
-          <Slider
-            aria-label="big steps"
-            defaultValue={0}
-            getAriaValueText={valuetext}
-            step={1}
-            marks
-            min={0}
-            max={4}
-            color="secondary"
-          />
-          
-        </Box>
       </div>
     </section>
   );

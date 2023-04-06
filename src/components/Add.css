@@ -50,15 +50,16 @@
 .levels-content-add-section
 {
     display: flex;
-    gap: 10px;
+    gap:10px;
+    justify-content: start;
+    font-size: 16px;
 }
-.level-slider-add-section input
-{
-    width: 100%;
-}
+
+
 .upload-image-content-add-section
 {
     border: 1px solid white;
+    display: flex;
 }
 .add-section span
 {
@@ -114,6 +115,11 @@
 .levels-content-add-section
 {
     color: #A5E0DD;
+}
+
+.levels-content-add-section p.active
+{
+    color: #105955;
 }
 
  input[type=range]

@@ -11,7 +11,7 @@ import { useState } from "react";
 export const Navigation = () => {
   const iconStyle = { color: "white", fontSize: "1.5em" };
   const [isThanksShown, setIsThanksShown] = useState(true);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handleThanks = (state) => {
     const thanksDiv = document.querySelector(".thanks-div");
