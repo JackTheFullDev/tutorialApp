@@ -17,6 +17,13 @@ function Home() {
     return (
         <div className="tutorial-component" key={index}> 
              <img src={data.Image} alt={data.tutorialName} />
+             <div className="tutorial-complex-data">
+               <p>Start date: {data.startDate}</p>
+               <p>End date: {data.endDate}</p>
+               <p>day/s: {data.days.join("-")} </p>
+               <p>amount: {data.amount}/{data["max-amount"]}</p>
+               <p>level: {data.level}</p>
+               </div>
             <div className="inner-info-content">
                 <h1 id="tutorial-name">{data.tutorialName}</h1>
                 <p id="canal-name">{data.canalName}</p>
@@ -26,7 +33,6 @@ function Home() {
                         <p>{data.totalHour}Likes</p>
                     </div>
                     <button>Register</button>
-                    {console.log(data.Image)}
                 </div>
             </div>
         </div>

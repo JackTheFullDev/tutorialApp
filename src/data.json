@@ -5,42 +5,85 @@
         "tutorialName":"Get new pet and start to earn money -Python for begginers.",
         "canalName":"Python-master ",
         "totalHour":14,
-        "Image": "./assets/python-tutorial.jpg"
+        "Image": "./assets/python-tutorial.jpg",
+        "startDate":"11-12-2023",
+        "endDate":"12-12-2023",
+        "amount":42,
+        "max-amount":50,
+        "days":["mon","tues"],
+        "level":"begginer"
+        
         
     },
     {
         "tutorialName":"Create modern dynamic pages with HTML5 - Advanced course with projects.",
         "canalName":"Web-master",
         "totalHour":11,
-        "Image": "./assets/html-tutorial.jpg"
+        "Image": "./assets/html-tutorial.jpg",
+        "startDate":"11-12-2023",
+        "endDate":"12-12-2023",
+        "time":"14-15:30",
+        "amount":42,
+        "max-amount":50,
+        "days":["mon","tues"],
+        "level":"Advanced"
+        
         
     },
     {
         "tutorialName":"Cybersecurity crash course in 24h! - Learn how to be secure in modern  world.        ",
         "canalName":"Cyber-master ",
         "totalHour":15,
-        "Image": "./assets/cyber-tutorial.jpg"
+        "Image": "./assets/cyber-tutorial.jpg",
+        "startDate":"11-12-2023",
+        "endDate":"12-12-2023",
+        "time":"12-15:30",
+        "amount":42,
+        "max-amount":50,
+        "days":["wed","thur"],
+        "level":"Junior"
         
     },
     {
         "tutorialName":"Understand basic concept of UI design -UI for beginners.",
         "canalName":"UI-master ",
         "totalHour":10,
-        "Image": "./assets/ui-tutorial.jpg"
+        "Image": "./assets/ui-tutorial.jpg",
+        "startDate":"11-12-2023",
+        "endDate":"12-12-2023",
+        "time":"15-17:30",
+        "amount":42,
+        "max-amount":50,
+        "days":["thu","sat"],
+        "level":"Master"
         
     },
     {
         "tutorialName":"Backend ease like never - Few application with node.js",
         "canalName":"Node-master ",
         "totalHour":4,
-        "Image": "./assets/node-tutorial.jpg"
+        "Image": "./assets/node-tutorial.jpg",
+        "startDate":"11-12-2023",
+        "endDate":"12-12-2023",
+        "time":"10-12:30",
+        "amount":42,
+        "max-amount":50,
+        "days":["wed","fri"],
+        "level":"Advanced"
         
     },
     {
         "tutorialName":"Master your ES6  and become JavaScript developer- Do or not there is no try",
         "canalName":"Python-master ",
         "totalHour":14,
-        "Image": "./assets/es6-tutorial.jpg"
+        "Image": "./assets/es6-tutorial.jpg",
+        "startDate":"11-12-2023",
+        "endDate":"12-12-2023",
+        "time":"19-22:30",
+        "amount":12,
+        "max-amount":20,
+        "days":["mon","sat"],
+        "level":"Entry"
         
     }
 ]
