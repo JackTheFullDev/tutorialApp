@@ -8,8 +8,8 @@
     font-family: 'Jura', sans-serif;
     font-weight: 500;
     letter-spacing: 1px;
-
 }
+
 .left-add-section
 {
     max-width: 350px;
@@ -105,6 +105,11 @@
     -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
     font-size: 20px;
 }
+.add-section-button:active
+{
+    transform: translateY(-2px);
+    color: white;
+}
 .right-content-add-section
 {
     display: flex;
@@ -119,7 +124,9 @@
 
 .levels-content-add-section p.active
 {
-    color: #105955;
+    color: #0aeee3;
+    font-size: 20px;
+    transition: 0.3s ease-in;
 }
 
  input[type=range]
