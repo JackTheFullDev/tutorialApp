@@ -2,17 +2,26 @@ import "./Home.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import tutorialData from "../data.json";
 import pythonImg from "/assets/python-tutorial.jpg";
+import { useState } from "react";
 
 function Home() {
  
+  const [inputValue, setInputValue] = useState("");
+  const handleHomeInput = (event) =>
+  {
+    const newValue=event.target.value.toLowerCase();
+    setInputValue(newValue);
+  }
   return (
     <section className="home-section">
       <div className="home-content">
         <div className="searchBar">
-          <input className="searchbar-input" placeholder="search" />
+          <input className="searchbar-input" placeholder="search"  onChange={handleHomeInput} />
           <AiOutlineSearch id="search-icon" />
         </div>
         <div className="grid-with-home-content">
+
+          {console.log(tutorialData.video.filter(searching=>searching.tutorialName.toLowerCase().includes(inputValue)))}
         {tutorialData.video.map((data,index) => {
     return (
         <div className="tutorial-component" key={index}> 

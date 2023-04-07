@@ -23,8 +23,8 @@
         "startDate":"11-12-2023",
         "endDate":"12-12-2023",
         "time":"14-15:30",
-        "amount":42,
-        "max-amount":50,
+        "amount":11,
+        "max-amount":15,
         "days":["mon","tues"],
         "level":"Advanced"
         
@@ -38,8 +38,8 @@
         "startDate":"11-12-2023",
         "endDate":"12-12-2023",
         "time":"12-15:30",
-        "amount":42,
-        "max-amount":50,
+        "amount":21,
+        "max-amount":30,
         "days":["wed","thur"],
         "level":"Junior"
         
@@ -52,8 +52,8 @@
         "startDate":"11-12-2023",
         "endDate":"12-12-2023",
         "time":"15-17:30",
-        "amount":42,
-        "max-amount":50,
+        "amount":2,
+        "max-amount":10,
         "days":["thu","sat"],
         "level":"Master"
         
@@ -66,8 +66,8 @@
         "startDate":"11-12-2023",
         "endDate":"12-12-2023",
         "time":"10-12:30",
-        "amount":42,
-        "max-amount":50,
+        "amount":12,
+        "max-amount":34,
         "days":["wed","fri"],
         "level":"Advanced"
         
