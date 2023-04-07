@@ -10,6 +10,8 @@ function Home() {
     const newValue = event.target.value.toLowerCase();
     setInputValue(newValue);
   };
+
+ 
   return (
     <section className="home-section">
       <div className="home-content">

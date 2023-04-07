@@ -5,6 +5,7 @@ import Slider from "@mui/material/Slider";
 
 import { AiOutlineUpload } from "react-icons/ai";
 import { useState } from "react";
+import { Form } from "react-router-dom";
 
 
 export const Add = () => {
@@ -15,23 +16,45 @@ export const Add = () => {
     setLevelState(newLevelValue);
   
   }
+  const [tutorialname,setTutorialName]=useState("");
+  const [tutorialStartDate,setTutorialStartDate]=useState("");
+  const [tutorialEndDate,setTutorialEndDate]=useState("");
+  const [tutorialStartTime,setTutorialStartTime]=useState("");
+  const [tutorialEndTime,setTutorialEndTime]=useState("");
+  const [tutorialDays,setTutorialDays]=useState([]);
+  const [tutorialNumberOfPeople,setTutorialNumberOfPeople]=useState(0);
+  const [tutorialLevel,setTutorialLevel]=useState(0);
+  
+  const handleSubmit = (e) =>
+  {
+    e.preventDefault();
+    const tutorialObject= {tutorialname,tutorialStartDate,tutorialEndDate,tutorialStartTime,tutorialEndTime,tutorialDays,tutorialNumberOfPeople,tutorialLevel};
+    console.log(tutorialObject);
+  }
+  const handleCheckBox  = (event) =>
+  {
+    const valueOfCheckbox = event.target.value;
+    event.target.checked?(setTutorialDays([...tutorialDays,valueOfCheckbox])):setTutorialDays(tutorialDays.filter(item=>item!==valueOfCheckbox));
+    console.log(tutorialDays);
+  }
 
   const [levelState,setLevelState]=useState(0);
   const iconStyle = { color: "white", fontSize: "10em" };
   return (
     <section className="add-section">
+      <form onSubmit={handleSubmit}>
       <div className="left-add-section">
         <h1>
           Create <span>New</span> Tutorial
         </h1>
         <div className="label-input-add-section">
           <p className="info-small-label">Tutorial Name</p>
-          <input type="text" placeholder="Name..." />
+          <input type="text" placeholder="Name..." value={tutorialname} onChange={handleCheckBox} />
         </div>
         <div className="date-add-section">
           <div>
             <p className="info-small-label">Start Date</p>
-            <input type="date" />
+            <input type="date" value={tutorialStartDate} onChange={handleCheckBox} />
           </div>
           <div>
             <p className="info-small-label">End Date</p>
@@ -54,11 +77,11 @@ export const Add = () => {
         <div className="dayOfTheWeek-add-section">
           <div className="checkboxes-add-section">
             <div className="checkboxes-inner-content-add-section">
-              <input className="checkbox-input-add-section" type="checkbox" />
+              <input className="checkbox-input-add-section" type="checkbox" value={"Monday"}  onChange={handleCheckBox}/>
               <p>Monday</p>
             </div>
             <div className="checkboxes-inner-content-add-section">
-              <input className="checkbox-input-add-section" type="checkbox" />
+              <input className="checkbox-input-add-section" type="checkbox" value={"Tuesday"}  onChange={handleCheckBox} />
               <p>Tuesday</p>
             </div>
             <div className="checkboxes-inner-content-add-section">
@@ -80,11 +103,11 @@ export const Add = () => {
           </div>
 
           <h2>
-            <span>Enter</span> Location
+            <span>Number</span> of participants
           </h2>
           <div className="label-input-add-section">
-            <p className="info-small-label">Location Name</p>
-            <input type="text" placeholder="Name..." />
+            <p className="info-small-label">max-amount</p>
+            <input type="number" placeholder="Number..." />
           </div>
           <h3>
             Choose your <span>training</span> level
@@ -119,7 +142,7 @@ export const Add = () => {
 
         </div>
         <div className="create-trening-button-add-section">
-          <button className="add-section-button"> Create Trening</button>
+          <button className="add-section-button" type="submit" onClick={()=>{console.log(tutorialStartDate)}}> Create Trening</button>
         </div>
       </div>
       <div className="right-add-section">
@@ -130,6 +153,7 @@ export const Add = () => {
           <button className="add-section-button">Upload Img</button>
         </div>
       </div>
+      </form>
     </section>
   );
 };
