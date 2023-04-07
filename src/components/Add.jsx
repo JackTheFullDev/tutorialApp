@@ -13,7 +13,9 @@ export const Add = () => {
 
   const handleLevelValue = (event,newLevelValue) =>
   {
-    setLevelState(newLevelValue);
+    const levels=["Entry","Beginner","Junior","Advanced","Master"];
+    setLevelState(event.target.value);
+    setTutorialLevel(levels[levelState]);
   
   }
   const [tutorialname,setTutorialName]=useState("");
@@ -49,26 +51,26 @@ export const Add = () => {
         </h1>
         <div className="label-input-add-section">
           <p className="info-small-label">Tutorial Name</p>
-          <input type="text" placeholder="Name..." value={tutorialname} onChange={handleCheckBox} />
+          <input type="text" placeholder="Name..." value={tutorialname} onChange={(e)=>setTutorialName(e.target.value)} />
         </div>
         <div className="date-add-section">
           <div>
             <p className="info-small-label">Start Date</p>
-            <input type="date" value={tutorialStartDate} onChange={handleCheckBox} />
+            <input type="date" value={tutorialStartDate} onChange={(e)=>setTutorialStartDate(e.target.value)} />
           </div>
           <div>
             <p className="info-small-label">End Date</p>
-            <input type="date" />
+            <input type="date" value={tutorialEndDate} onChange={(e)=>setTutorialEndDate(e.target.value)} />
           </div>
         </div>
         <div className="time-add-section">
           <div>
             <p className="info-small-label">Start time</p>
-            <input type="time" />
+            <input type="time" value={tutorialStartTime} onChange={(e)=>setTutorialStartTime(e.target.value)} />
           </div>
           <div>
             <p className="info-small-label">End time</p>
-            <input type="time" />
+            <input type="time"value={tutorialEndTime} onChange={(e)=>setTutorialEndTime(e.target.value)} />
           </div>
         </div>
         <h2>
@@ -85,19 +87,19 @@ export const Add = () => {
               <p>Tuesday</p>
             </div>
             <div className="checkboxes-inner-content-add-section">
-              <input className="checkbox-input-add-section" type="checkbox" />
+              <input className="checkbox-input-add-section" type="checkbox" value={"Wednesday"} onChange={handleCheckBox} />
               <p>Wednesday</p>
             </div>
             <div className="checkboxes-inner-content-add-section">
-              <input className="checkbox-input-add-section" type="checkbox" />
+              <input className="checkbox-input-add-section"  type="checkbox" value={"Thursday"} onChange={handleCheckBox} />
               <p>Thursday</p>
             </div>
             <div className="checkboxes-inner-content-add-section">
-              <input className="checkbox-input-add-section" type="checkbox" />
+              <input className="checkbox-input-add-section" type="checkbox" value={"Friday"} onChange={handleCheckBox} />
               <p>Friday</p>
             </div>
             <div className="checkboxes-inner-content-add-section">
-              <input className="checkbox-input-add-section" type="checkbox" />
+              <input className="checkbox-input-add-section" type="checkbox" value={"Saturday"} onChange={handleCheckBox} />
               <p>Saturday</p>
             </div>
           </div>
@@ -107,7 +109,7 @@ export const Add = () => {
           </h2>
           <div className="label-input-add-section">
             <p className="info-small-label">max-amount</p>
-            <input type="number" placeholder="Number..." />
+            <input type="number" placeholder="Number..." value={tutorialNumberOfPeople} onChange={(e)=>setTutorialNumberOfPeople(e.target.value)}  />
           </div>
           <h3>
             Choose your <span>training</span> level
@@ -142,7 +144,7 @@ export const Add = () => {
 
         </div>
         <div className="create-trening-button-add-section">
-          <button className="add-section-button" type="submit" onClick={()=>{console.log(tutorialStartDate)}}> Create Trening</button>
+          <button className="add-section-button" type="submit" onClick={()=>{}}> Create Trening</button>
         </div>
       </div>
       <div className="right-add-section">
