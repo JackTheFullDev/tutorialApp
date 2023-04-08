@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import "./App.css";
-import Home from "./components/home";
+import Home from "./components/Home";
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -10,10 +10,12 @@ import Add from "./components/Add";
 import {Navigation} from "./components/feature/Navigation";
 
 import tutorialImg from "./data.json";
+import { HomeProvider } from "./components/feature/HomeContext";
 function App() {
 
   return (
     <div className="App">
+      <HomeProvider>
       <Router>
       <Navigation/>
         <Routes>
@@ -22,6 +24,7 @@ function App() {
           <Route path="/add" element={<Add />}></Route>
         </Routes>
       </Router>
+      </HomeProvider>
     </div>
   );
 }

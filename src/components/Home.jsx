@@ -1,8 +1,8 @@
 import "./Home.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import tutorialData from "../data.json";
-import pythonImg from "/assets/python-tutorial.jpg";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { HomeContext } from "./feature/HomeContext";
 
 function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -11,8 +11,10 @@ function Home() {
     setInputValue(newValue);
   };
 
+ const { addToLibrary } = useContext(HomeContext);
  
   return (
+    
     <section className="home-section">
       <div className="home-content">
         <div className="searchBar">
@@ -38,8 +40,8 @@ function Home() {
                 <div className="tutorial-component" key={index}>
                   <img src={data.Image} alt={data.tutorialName} />
                   <div className="tutorial-complex-data">
-                    <p>Start date: {data.startDate}</p>
-                    <p>End date: {data.endDate}</p>
+                    <p>Start date: {data.date[0].startDate}</p>
+                    <p>End date: {data.date[0].endDate}</p>
                     <p>day/s: {data.days.join("-")} </p>
                     <p>
                       amount: {data.amount}/{data["max-amount"]}
@@ -54,12 +56,14 @@ function Home() {
                         <p>{data.totalHour}h video</p>
                         <p>{data.totalHour}Likes</p>
                       </div>
-                      <button>Register</button>
+                      <button onClick={()=>{addToLibrary(data.tutorialName,data.date[0],data.days,data.amount,data.level,data.Image)}}>Register</button>
                     </div>
                   </div>
                 </div>
+               
               );
             })}
+             
         </div>
       </div>
     </section>

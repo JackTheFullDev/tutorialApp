@@ -203,6 +203,10 @@ padding: 3px;
  opacity: 1!important;
 }
 @media only screen  and (max-width:540px) {
+   .add-section
+   {
+    height: 100vh;
+   }
     form
     {
         flex-direction: column;
