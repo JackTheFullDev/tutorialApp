@@ -3,6 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import tutorialData from "../data.json";
 import { useContext, useState } from "react";
 import { HomeContext } from "./feature/HomeContext";
+import { Warning } from "./feature/Warning";
 
 function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -56,14 +57,15 @@ function Home() {
                         <p>{data.totalHour}h video</p>
                         <p>{data.totalHour}Likes</p>
                       </div>
-                      <button onClick={()=>{addToLibrary(data.tutorialName,data.date[0],data.days,data.amount,data.level,data.Image)}}>Register</button>
+                      <button onClick={()=>{addToLibrary(data.tutorialName,data.date[0],data.days,data.amount,data.level,data.Image,data.canalName,data["max-amount"])}}>Register</button>
                     </div>
                   </div>
+                  
                 </div>
                
               );
             })}
-             
+            
         </div>
       </div>
     </section>

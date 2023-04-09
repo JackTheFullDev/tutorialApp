@@ -11,11 +11,13 @@ import {Navigation} from "./components/feature/Navigation";
 
 import tutorialImg from "./data.json";
 import { HomeProvider } from "./components/feature/HomeContext";
+import { AddProvider } from "./components/feature/AddContext";
 function App() {
 
   return (
     <div className="App">
       <HomeProvider>
+      <AddProvider>
       <Router>
       <Navigation/>
         <Routes>
@@ -24,6 +26,7 @@ function App() {
           <Route path="/add" element={<Add />}></Route>
         </Routes>
       </Router>
+      </AddProvider>
       </HomeProvider>
     </div>
   );

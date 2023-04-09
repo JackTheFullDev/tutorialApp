@@ -2,16 +2,19 @@ import { MdWidthFull } from "react-icons/md";
 import "./Add.css";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-
+import { useContext } from "react";
 import { AiOutlineUpload } from "react-icons/ai";
 import { useState } from "react";
 import { Form } from "react-router-dom";
+import { addContext } from "./feature/AddContext";
 
 export const Add = () => {
-  const handleLevelValue = (event, newLevelValue) => {
+  const handleLevelValue = (event) => {
     const levels = ["Entry", "Beginner", "Junior", "Advanced", "Master"];
-    setLevelState(event.target.value);
-    setTutorialLevel(levels[levelState]);
+    const currentLevel=event.target.value;
+    setLevelState(currentLevel);
+    setTutorialLevel(levels[currentLevel]);
+    console.log(levels[currentLevel]);
   };
   const [tutorialname, setTutorialName] = useState("");
   const [tutorialStartDate, setTutorialStartDate] = useState("");
@@ -21,6 +24,8 @@ export const Add = () => {
   const [tutorialDays, setTutorialDays] = useState([]);
   const [tutorialNumberOfPeople, setTutorialNumberOfPeople] = useState(0);
   const [tutorialLevel, setTutorialLevel] = useState(0);
+
+  const { addToLibrary } = useContext(addContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,6 +40,7 @@ export const Add = () => {
       tutorialLevel,
     };
     console.log(tutorialObject);
+    addToLibrary(tutorialObject);
   };
   const handleCheckBox = (event) => {
     const valueOfCheckbox = event.target.value;

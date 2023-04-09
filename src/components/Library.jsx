@@ -5,7 +5,7 @@ import "./Library.css";
 
 export const  Library =() =>
 {
-    const {tutorialData} = useContext(HomeContext);
+    const {tutorialData,removeFromLibrary} = useContext(HomeContext);
     
     return (
         <section className="home-section">
@@ -21,19 +21,19 @@ export const  Library =() =>
                       <p>End date: {data._date.endDate}</p>
                       <p>day/s: {data._days.join("-")} </p>
                       <p>
-                        amount: {data._amount}/{data["max-amount"]}
+                        amount: {data._amount}/{data._maxAmount}
                       </p>
                       <p>level: {data._level}</p>
                     </div>
                     <div className="inner-info-content">
                       <h1 id="tutorial-name">{data._tutorialName}</h1>
-                      <p id="canal-name"></p>
+                      <p id="canal-name">{data._canalName}</p>
                       <div className="bottom-tutorial-components">
                         <div className="bottom-totalhour-likes">
                           <p>h video</p>
                           <p>Likes</p>
                         </div>
-                        <button style={{color:"yellow"}}>Resign</button>
+                        <button style={{color:"yellow"}} onClick={()=>(removeFromLibrary(data))}>Resign</button>
                       </div>
                     </div>
                   </div>
