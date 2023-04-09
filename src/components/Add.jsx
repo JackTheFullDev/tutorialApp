@@ -11,10 +11,9 @@ import { addContext } from "./feature/AddContext";
 export const Add = () => {
   const handleLevelValue = (event) => {
     const levels = ["Entry", "Beginner", "Junior", "Advanced", "Master"];
-    const currentLevel=event.target.value;
+    const currentLevel = event.target.value;
     setLevelState(currentLevel);
     setTutorialLevel(levels[currentLevel]);
-    console.log(levels[currentLevel]);
   };
   const [tutorialname, setTutorialName] = useState("");
   const [tutorialStartDate, setTutorialStartDate] = useState("");
@@ -214,9 +213,8 @@ export const Add = () => {
             <button
               className="add-section-button"
               type="submit"
-              onClick={() => {}}
+              onClick={() => {handleSubmit}}
             >
-              {" "}
               Create Trening
             </button>
           </div>
