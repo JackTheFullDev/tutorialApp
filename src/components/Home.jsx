@@ -1,9 +1,11 @@
 import "./Home.css";
-import { AiOutlineSearch } from "react-icons/ai";
+
 import tutorialData from "../data.json";
 import { useContext, useState } from "react";
 import { HomeContext } from "./feature/HomeContext";
 import { Warning } from "./feature/Warning";
+import { Course } from "./template/Course";
+import { SearchBar } from "./template/SearchBar";
 
 function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -12,20 +14,12 @@ function Home() {
     setInputValue(newValue);
   };
 
- const { addToLibrary } = useContext(HomeContext);
- 
+  const { addToLibrary } = useContext(HomeContext);
+
   return (
-    
     <section className="home-section">
       <div className="home-content">
-        <div className="searchBar">
-          <input
-            className="searchbar-input"
-            placeholder="search"
-            onChange={handleHomeInput}
-          />
-          <AiOutlineSearch id="search-icon" />
-        </div>
+        <SearchBar handleHomeInput={handleHomeInput}></SearchBar>
         <div className="grid-with-home-content">
           {tutorialData.video
             .filter((searchingValue) => {
@@ -37,8 +31,15 @@ function Home() {
               );
             })
             .map((data, index) => {
-              return (
-                <div className="tutorial-component" key={index}>
+              return <Course key={index} data={data}></Course>;
+            })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/*  <div className="tutorial-component" key={index}>
                   <img src={data.Image} alt={data.tutorialName} />
                   <div className="tutorial-complex-data">
                     <p>Start date: {data.date[0].startDate}</p>
@@ -61,15 +62,5 @@ function Home() {
                     </div>
                   </div>
                   
-                </div>
-               
-              );
-            })}
-            
-        </div>
-      </div>
-    </section>
-  );
-}
-
+                </div> */
 export default Home;
