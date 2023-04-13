@@ -8,6 +8,7 @@ export const Library = () => {
   const { tutorialData, removeFromLibrary } = useContext(HomeContext);
   const { addTutorialData } = useContext(addContext);
 
+  console.log(tutorialData)
   return (
     <section className="home-section">
       <div className="home-content">
@@ -55,7 +56,7 @@ export const Library = () => {
           {addTutorialData.map((ownContentData, index) => {
                 return (
                   <div className="tutorial-component" key={index}>
-                    <img/>
+                    <img src={ownContentData._addTutorialData.selectedImage}/>
                     <div className="tutorial-complex-data">
                       <p>Start date: {ownContentData._addTutorialData.tutorialStartDate}</p>
                       <p>End date: {ownContentData._addTutorialData.tutorialEndDate}</p>

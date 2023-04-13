@@ -1,5 +1,5 @@
 export const Course = (tutorialCourseData) => {
-  console.log(tutorialCourseData);
+ // console.log(tutorialCourseData);
   const data = tutorialCourseData.data;
   return (
     <div className="tutorial-component">

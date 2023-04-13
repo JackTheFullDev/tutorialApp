@@ -37,6 +37,7 @@ export const Add = () => {
       tutorialDays,
       tutorialNumberOfPeople,
       tutorialLevel,
+      selectedImage
     };
     console.log(tutorialObject);
     addToLibrary(tutorialObject);
@@ -50,6 +51,19 @@ export const Add = () => {
         );
     console.log(tutorialDays);
   };
+  //uploadImageContent
+
+  const [selectedImage,setSelectedImage]=useState([]);
+   const fileSelectedHandler = (event) =>
+  {
+    const file=event.target.files[0];
+    const reader=new FileReader();
+    reader.onload =() =>{
+      setSelectedImage(reader.result);
+    }
+    reader.readAsDataURL(file);
+  }
+  
 
   const [levelState, setLevelState] = useState(0);
   const iconStyle = { color: "white", fontSize: "10em" };
@@ -213,7 +227,7 @@ export const Add = () => {
             <button
               className="add-section-button"
               type="submit"
-              onClick={() => {handleSubmit}}
+              onClick={(e) => {handleSubmit}}
             >
               Create Trening
             </button>
@@ -223,6 +237,8 @@ export const Add = () => {
           <div className="right-content-add-section">
             <div className="upload-image-content-add-section">
               <AiOutlineUpload style={iconStyle} />
+              <input type="file" onChange={fileSelectedHandler}></input>
+               <img style={{width:"10px"}} src={selectedImage} alt="preview"></img>
             </div>
             <button className="add-section-button">Upload Img</button>
           </div>

@@ -31,7 +31,7 @@ function Home() {
               );
             })
             .map((data, index) => {
-              return <Course key={index} data={data}></Course>;
+              return <Course key={index} data={data} ></Course>;
             })}
         </div>
       </div>
