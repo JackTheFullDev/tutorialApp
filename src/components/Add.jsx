@@ -7,6 +7,7 @@ import { AiOutlineUpload } from "react-icons/ai";
 import { useState } from "react";
 import { Form } from "react-router-dom";
 import { addContext } from "./feature/AddContext";
+import uploadImg from "../../public/assets/upload.png"
 
 export const Add = () => {
   const handleLevelValue = (event) => {
@@ -53,7 +54,7 @@ export const Add = () => {
   };
   //uploadImageContent
 
-  const [selectedImage,setSelectedImage]=useState([]);
+  const [selectedImage,setSelectedImage]=useState(uploadImg);
    const fileSelectedHandler = (event) =>
   {
     const file=event.target.files[0];
@@ -66,7 +67,7 @@ export const Add = () => {
   
 
   const [levelState, setLevelState] = useState(0);
-  const iconStyle = { color: "white", fontSize: "10em" };
+ 
   return (
     <section className="add-section">
       <form onSubmit={handleSubmit}>
@@ -236,16 +237,18 @@ export const Add = () => {
         <div className="right-add-section">
           <div className="right-content-add-section">
             <div className="upload-image-content-add-section">
-              <AiOutlineUpload style={iconStyle} />
-              <input type="file" onChange={fileSelectedHandler}></input>
-               <img style={{width:"10px"}} src={selectedImage} alt="preview"></img>
+             
+              <input className="image-picker" type="file" onChange={fileSelectedHandler}></input>
+               <img  className="tutorial-image-picked" src={selectedImage} alt="preview"></img>
             </div>
             <button className="add-section-button">Upload Img</button>
           </div>
         </div>
       </form>
     </section>
+
   );
+  
 };
 
 export default Add;

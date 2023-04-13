@@ -120,6 +120,7 @@ form
 {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-self: center;
     gap: 10px;;
 }
@@ -201,6 +202,39 @@ padding: 3px;
 .css-6cwnna-MuiSlider-mark
 {
  opacity: 1!important;
+}
+.upload-image-content-add-section
+{
+    position: relative;
+    height: 150px;
+    width: 100vw;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-picker
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    
+}
+.upload-image-content-add-section:hover .image-picker
+{
+    display: block;
+    cursor: pointer;
+}
+.tutorial-image-picked
+{
+    
+    height: 100%;
+    width: 100%;
+    
 }
 @media only screen  and (max-width:540px) {
    .add-section
