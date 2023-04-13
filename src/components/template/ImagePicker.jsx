@@ -1,17 +1,12 @@
-const [selectedImage,setSelectedImage]=useState(uploadImg);
-   const fileSelectedHandler = (event) =>
-  {
-    const file=event.target.files[0];
-    const reader=new FileReader();
-    reader.onload =() =>{
-      setSelectedImage(reader.result);
-    }
-    reader.readAsDataURL(file);
-  
-
-export const ImagePicker = () =>
-{
-    return(
-        <p></p>
-    )
-}
+export const ImagePicker = ({ fileSelectedHandler, selectedImage }) => {
+  return (
+    <div className="upload-image-content-add-section">
+      <input
+        className="image-picker"
+        type="file"
+        onChange={fileSelectedHandler}
+      ></input>
+      <img className="tutorial-image" src={selectedImage} />
+    </div>
+  );
+};

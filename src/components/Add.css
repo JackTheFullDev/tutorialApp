@@ -222,19 +222,22 @@ padding: 3px;
     right: 0;
     left: 0;
     display: none;
+    color:#48CB3D;
+    
     
 }
 .upload-image-content-add-section:hover .image-picker
 {
-    display: block;
+    display: flex;
     cursor: pointer;
+    background-color: transparent;
+    
 }
-.tutorial-image-picked
+.tutorial-image
 {
-    
     height: 100%;
-    width: 100%;
-    
+    max-width: 100%;
+
 }
 @media only screen  and (max-width:540px) {
    .add-section

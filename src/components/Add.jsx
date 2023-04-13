@@ -7,7 +7,9 @@ import { AiOutlineUpload } from "react-icons/ai";
 import { useState } from "react";
 import { Form } from "react-router-dom";
 import { addContext } from "./feature/AddContext";
-import uploadImg from "../../public/assets/upload.png"
+
+import { ImagePicker } from "./template/ImagePicker";
+import uploadImg from "../../public/assets/upload.png";
 
 export const Add = () => {
   const handleLevelValue = (event) => {
@@ -24,9 +26,21 @@ export const Add = () => {
   const [tutorialDays, setTutorialDays] = useState([]);
   const [tutorialNumberOfPeople, setTutorialNumberOfPeople] = useState(0);
   const [tutorialLevel, setTutorialLevel] = useState(0);
+  //image
+  const [selectedImage, setSelectedImage] = useState("");
+  const fileSelectedHandler = (event) => {
+    event.preventDefault();
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      setSelectedImage(reader.result);
+      console.log(reader.result);
+    };
+    reader.readAsDataURL(file);
+    //end of file
+  };
 
   const { addToLibrary } = useContext(addContext);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const tutorialObject = {
@@ -38,9 +52,8 @@ export const Add = () => {
       tutorialDays,
       tutorialNumberOfPeople,
       tutorialLevel,
-      selectedImage
+      selectedImage,
     };
-    console.log(tutorialObject);
     addToLibrary(tutorialObject);
   };
   const handleCheckBox = (event) => {
@@ -53,21 +66,12 @@ export const Add = () => {
     console.log(tutorialDays);
   };
   //uploadImageContent
-
-  const [selectedImage,setSelectedImage]=useState(uploadImg);
-   const fileSelectedHandler = (event) =>
-  {
-    const file=event.target.files[0];
-    const reader=new FileReader();
-    reader.onload =() =>{
-      setSelectedImage(reader.result);
-    }
-    reader.readAsDataURL(file);
-  }
-  
-
   const [levelState, setLevelState] = useState(0);
- 
+  const handleImage = (e) => {
+    e.preventDefault();
+    console.log(selectedImage);
+    console.log("uploadIMG");
+  };
   return (
     <section className="add-section">
       <form onSubmit={handleSubmit}>
@@ -228,7 +232,9 @@ export const Add = () => {
             <button
               className="add-section-button"
               type="submit"
-              onClick={(e) => {handleSubmit}}
+              onClick={(e) => {
+                handleSubmit;
+              }}
             >
               Create Trening
             </button>
@@ -236,19 +242,22 @@ export const Add = () => {
         </div>
         <div className="right-add-section">
           <div className="right-content-add-section">
-            <div className="upload-image-content-add-section">
-             
-              <input className="image-picker" type="file" onChange={fileSelectedHandler}></input>
-               <img  className="tutorial-image-picked" src={selectedImage} alt="preview"></img>
-            </div>
-            <button className="add-section-button">Upload Img</button>
+            <ImagePicker
+              fileSelectedHandler={fileSelectedHandler}
+              selectedImage={selectedImage}
+            ></ImagePicker>
+           
+            <button
+              className="add-section-button"
+              onClick={handleSubmit}
+            >
+              Upload Img
+            </button>
           </div>
         </div>
       </form>
     </section>
-
   );
-  
 };
 
 export default Add;
