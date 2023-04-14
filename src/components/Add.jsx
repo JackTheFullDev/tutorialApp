@@ -63,15 +63,10 @@ export const Add = () => {
       : setTutorialDays(
           tutorialDays.filter((item) => item !== valueOfCheckbox)
         );
-    console.log(tutorialDays);
   };
   //uploadImageContent
   const [levelState, setLevelState] = useState(0);
-  const handleImage = (e) => {
-    e.preventDefault();
-    console.log(selectedImage);
-    console.log("uploadIMG");
-  };
+ 
   return (
     <section className="add-section">
       <form onSubmit={handleSubmit}>
@@ -242,17 +237,12 @@ export const Add = () => {
         </div>
         <div className="right-add-section">
           <div className="right-content-add-section">
-            <ImagePicker
+          <div className="image-container">
+          <img className="tutorial-image" src={selectedImage} />
+          </div>
+          <ImagePicker
               fileSelectedHandler={fileSelectedHandler}
-              selectedImage={selectedImage}
             ></ImagePicker>
-           
-            <button
-              className="add-section-button"
-              onClick={handleSubmit}
-            >
-              Upload Img
-            </button>
           </div>
         </div>
       </form>

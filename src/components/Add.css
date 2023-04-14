@@ -60,13 +60,6 @@ form
     justify-content: start;
     font-size: 16px;
 }
-
-
-.upload-image-content-add-section
-{
-    border: 1px solid white;
-    display: flex;
-}
 .add-section span
 {
     color: #48CB3D;
@@ -205,38 +198,51 @@ padding: 3px;
 }
 .upload-image-content-add-section
 {
-    position: relative;
     height: 150px;
     width: 100vw;
     max-width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   flex-direction: column;
+   
+}
+.right-content-add-section .image-picker{
+    background-color: transparent;
 }
 
-.image-picker
+
+.image-picker::-webkit-file-upload-button 
 {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: none;
-    color:#48CB3D;
-    
-    
-}
-.upload-image-content-add-section:hover .image-picker
-{
-    display: flex;
-    cursor: pointer;
     background-color: transparent;
+    color: #57f049;
+    font-size: large;
+    border:none;
+    letter-spacing: 0.2px;
+    font-weight: bold;
+    font-family: jura;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.image-picker::-webkit-file-upload-button:active
+{
+   transform: translateY(-2px);
+   transition: 0.3s ease-in-out;
     
 }
+.image-container
+{
+    border:1px solid white;
+    width: 100%;
+    max-width: 350px;
+    height: 200px;
+    border-radius: 15px;
+}
+
 .tutorial-image
 {
-    height: 100%;
-    max-width: 100%;
+    
+   width: 100%;
+   height: 100%;
+   border-radius: 10px;
 
 }
 @media only screen  and (max-width:540px) {

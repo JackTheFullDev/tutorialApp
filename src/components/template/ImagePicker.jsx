@@ -1,4 +1,4 @@
-export const ImagePicker = ({ fileSelectedHandler, selectedImage }) => {
+export const ImagePicker = ({ fileSelectedHandler }) => {
   return (
     <div className="upload-image-content-add-section">
       <input
@@ -6,7 +6,6 @@ export const ImagePicker = ({ fileSelectedHandler, selectedImage }) => {
         type="file"
         onChange={fileSelectedHandler}
       ></input>
-      <img className="tutorial-image" src={selectedImage} />
     </div>
   );
 };
