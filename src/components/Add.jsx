@@ -11,6 +11,7 @@ import { addContext } from "./feature/AddContext";
 import { ImagePicker } from "./template/ImagePicker";
 import uploadImg from "../../public/assets/upload.png";
 import { LevelPicker } from "./template/LevelPicker";
+import { DayPicker } from "./template/DayPicker";
 
 export const Add = () => {
   const handleLevelValue = (event) => {
@@ -67,7 +68,32 @@ export const Add = () => {
   };
   //uploadImageContent
   const [levelState, setLevelState] = useState(0);
- 
+  const dayOfWeek = [
+    {
+      id: 1,
+      name: "Monday",
+    },
+    {
+      id: 2,
+      name: "Tuesday",
+    },
+    {
+      id: 3,
+      name: "Wednesday",
+    },
+    {
+      id: 4,
+      name: "Thursday",
+    },
+    {
+      id: 5,
+      name: "Friday",
+    },
+    {
+      id: 6,
+      name: "Saturday",
+    },
+  ];
   return (
     <section className="add-section">
       <form onSubmit={handleSubmit}>
@@ -125,60 +151,31 @@ export const Add = () => {
           </h2>
           <div className="dayOfTheWeek-add-section">
             <div className="checkboxes-add-section">
-              <div className="checkboxes-inner-content-add-section">
-                <input
-                  className="checkbox-input-add-section"
-                  type="checkbox"
-                  value={"Monday"}
-                  onChange={handleCheckBox}
-                />
-                <p>Monday</p>
-              </div>
-              <div className="checkboxes-inner-content-add-section">
-                <input
-                  className="checkbox-input-add-section"
-                  type="checkbox"
-                  value={"Tuesday"}
-                  onChange={handleCheckBox}
-                />
-                <p>Tuesday</p>
-              </div>
-              <div className="checkboxes-inner-content-add-section">
-                <input
-                  className="checkbox-input-add-section"
-                  type="checkbox"
-                  value={"Wednesday"}
-                  onChange={handleCheckBox}
-                />
-                <p>Wednesday</p>
-              </div>
-              <div className="checkboxes-inner-content-add-section">
-                <input
-                  className="checkbox-input-add-section"
-                  type="checkbox"
-                  value={"Thursday"}
-                  onChange={handleCheckBox}
-                />
-                <p>Thursday</p>
-              </div>
-              <div className="checkboxes-inner-content-add-section">
-                <input
-                  className="checkbox-input-add-section"
-                  type="checkbox"
-                  value={"Friday"}
-                  onChange={handleCheckBox}
-                />
-                <p>Friday</p>
-              </div>
-              <div className="checkboxes-inner-content-add-section">
-                <input
-                  className="checkbox-input-add-section"
-                  type="checkbox"
-                  value={"Saturday"}
-                  onChange={handleCheckBox}
-                />
-                <p>Saturday</p>
-              </div>
+              <DayPicker
+                day={dayOfWeek[0]}
+                handleCheckBox={handleCheckBox}
+              ></DayPicker>
+             
+              <DayPicker
+                day={dayOfWeek[1]}
+                handleCheckBox={handleCheckBox}
+              ></DayPicker>
+              <DayPicker
+                day={dayOfWeek[2]}
+                handleCheckBox={handleCheckBox}
+              ></DayPicker>
+              <DayPicker
+                day={dayOfWeek[3]}
+                handleCheckBox={handleCheckBox}
+              ></DayPicker>
+              <DayPicker
+                day={dayOfWeek[4]}
+                handleCheckBox={handleCheckBox}
+              ></DayPicker>
+              <DayPicker
+                day={dayOfWeek[5]}
+                handleCheckBox={handleCheckBox}
+              ></DayPicker>
             </div>
 
             <h2>
@@ -198,7 +195,7 @@ export const Add = () => {
             </h3>
           </div>
           <div className="level-slider-add-section">
-            <LevelPicker levelState={levelState}/>
+            <LevelPicker levelState={levelState} />
 
             <Box
               sx={{
@@ -232,10 +229,10 @@ export const Add = () => {
         </div>
         <div className="right-add-section">
           <div className="right-content-add-section">
-          <div className="image-container">
-          <img className="tutorial-image" src={selectedImage} />
-          </div>
-          <ImagePicker
+            <div className="image-container">
+              <img className="tutorial-image" src={selectedImage} />
+            </div>
+            <ImagePicker
               fileSelectedHandler={fileSelectedHandler}
             ></ImagePicker>
           </div>
