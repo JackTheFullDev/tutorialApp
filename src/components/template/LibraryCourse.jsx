@@ -2,16 +2,18 @@ import { useContext } from "react";
 import { HomeContext } from "../feature/HomeContext";
 
 
-export const Course = (tutorialCourseData) => {
+export const LibraryCourse = (tutorialCourseData) => {
  
- const { addToLibrary } = useContext(HomeContext);
+ const { addToLibrary,removeFromLibrary } = useContext(HomeContext);
   const data = tutorialCourseData.data;
+  console.log(data);
+
   return (
     <div className="tutorial-component">
-      <img src={data.Image} alt={data.tutorialName} />
+      <img src={data.image} alt={data.tutorialName} />
       <div className="tutorial-complex-data">
-        <p>Start date: {data.date[0].startDate}</p> 
-        <p>End date: {data.date[0].endDate}</p>
+        <p>Start date: {data.date.startDate}</p>
+        <p>End date: {data.date.endDate}</p>
         <p>day/s: {data.days.join("-")} </p>
         <p>
           amount: {data.amount}/{data["max-amount"]}
@@ -23,24 +25,15 @@ export const Course = (tutorialCourseData) => {
         <p id="canal-name">{data.canalName}</p>
         <div className="bottom-tutorial-components">
           <div className="bottom-totalhour-likes">
-            <p>{data.totalHour}h video</p>
-            <p>{data.totalHour}Likes</p>
+            <p>12 h video</p>
+            <p>13 Likes</p>
           </div>
           <button
             onClick={() => {
-              addToLibrary(
-                data.tutorialName,
-                data.date[0],
-                data.days,
-                data.amount,
-                data.level,
-                data.Image,
-                data.canalName,
-                data["max-amount"]
-              );
+              removeFromLibrary(data);
             }}
           >
-            Register
+            Resign
           </button>
         </div>
       </div>
