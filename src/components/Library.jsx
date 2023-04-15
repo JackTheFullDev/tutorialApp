@@ -9,7 +9,7 @@ import { AddCourse } from "./template/AddCourse";
 
 export const Library = () => {
   const { tutorialData, removeFromLibrary } = useContext(HomeContext);
-  const { addTutorialData } = useContext(addContext);
+  const { addTutorialData,removeAddedFromLibrary } = useContext(addContext);
   return (
     <section className="home-section">
       <div className="home-content">
@@ -32,7 +32,7 @@ export const Library = () => {
               <AddCourse
                 addData={data}
                 key={index}
-                deleteFunction={removeFromLibrary}
+                deleteCourseFunc={removeAddedFromLibrary}
               ></AddCourse>
             );
           })}

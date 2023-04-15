@@ -1,7 +1,7 @@
-export const AddCourse = ({addData,deleteFunction}) =>
+export const AddCourse = ({addData,deleteCourseFunc}) =>
 {
   const data=addData._addTutorialData;
-  console.log(data)
+  
   return(
     <div className="tutorial-component">
       <img src={data.selectedImage} alt={data.tutorialname} />
@@ -28,7 +28,7 @@ export const AddCourse = ({addData,deleteFunction}) =>
             edit
           </button>
           <button
-            onClick={()=>deleteFunction(data)} style={{color:"red"}}
+            onClick={()=>deleteCourseFunc(data)} style={{color:"red"}}
           >
             delete
           </button>
