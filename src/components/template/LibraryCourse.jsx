@@ -1,10 +1,8 @@
 
 
 
-export const LibraryCourse = ({data,removeFromLibrary}) => {
+export const LibraryCourse = ({data,courseFunction}) => {
  
-  const courseData= data.data;
-  console.log(courseData);
 
   return (
     <div className="tutorial-component">
@@ -27,7 +25,7 @@ export const LibraryCourse = ({data,removeFromLibrary}) => {
             <p>13 Likes</p>
           </div>
           <button
-            onClick={()=>removeFromLibrary(data)}
+            onClick={()=>courseFunction(data)} style={{color:"yellow"}}
           >
             Resign
           </button>
