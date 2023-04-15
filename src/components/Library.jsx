@@ -3,8 +3,9 @@ import { HomeContext } from "./feature/HomeContext";
 
 import "./Library.css";
 import { addContext } from "./feature/AddContext";
-import { Course } from "./template/Course";
+
 import { LibraryCourse } from "./template/LibraryCourse";
+import { AddCourse } from "./template/AddCourse";
 
 export const Library = () => {
   const { tutorialData, removeFromLibrary } = useContext(HomeContext);
@@ -16,24 +17,25 @@ export const Library = () => {
         <div className="grid-with-home-content">
           {tutorialData.map((data, index) => {
             return (
-             
-              <LibraryCourse data={data} key={index} removeFromLibrary={removeFromLibrary}></LibraryCourse>
+              <LibraryCourse
+                data={data}
+                key={index}
+                courseFunction={removeFromLibrary}
+              ></LibraryCourse>
             );
           })}
         </div>
         <p>Content you created</p>
         <div>
-          {addTutorialData.map((ownContentData) =>
-            console.log(ownContentData._addTutorialData.tutorialname)
-          )}
-
-          {addTutorialData.map((ownContentData, index) => {
-                return (
-                  
-                );
-              })}
-
-
+          {addTutorialData.map((data, index) => {
+            return (
+              <AddCourse
+                addData={data}
+                key={index}
+                deleteFunction={removeFromLibrary}
+              ></AddCourse>
+            );
+          })}
         </div>
       </div>
     </section>
