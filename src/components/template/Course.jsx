@@ -8,10 +8,10 @@ export const Course = (tutorialCourseData) => {
   const data = tutorialCourseData.data;
   return (
     <div className="tutorial-component">
-      <img src={data.Image} alt={data.tutorialName} />
+      <img src={data.image} alt={data.tutorialName} />
       <div className="tutorial-complex-data">
-        <p>Start date: {data.date[0].startDate}</p> 
-        <p>End date: {data.date[0].endDate}</p>
+        <p>Start date: {data.date.startDate}</p> 
+        <p>End date: {data.date.endDate}</p>
         <p>day/s: {data.days.join("-")} </p>
         <p>
           amount: {data.amount}/{data["max-amount"]}
@@ -30,11 +30,11 @@ export const Course = (tutorialCourseData) => {
             onClick={() => {
               addToLibrary(
                 data.tutorialName,
-                data.date[0],
+                data.date,
                 data.days,
                 data.amount,
                 data.level,
-                data.Image,
+                data.image,
                 data.canalName,
                 data["max-amount"]
               );

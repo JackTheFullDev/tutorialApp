@@ -1,12 +1,10 @@
-import { useContext } from "react";
-import { HomeContext } from "../feature/HomeContext";
 
 
-export const LibraryCourse = (tutorialCourseData) => {
+
+export const LibraryCourse = ({data,removeFromLibrary}) => {
  
- const { addToLibrary,removeFromLibrary } = useContext(HomeContext);
-  const data = tutorialCourseData.data;
-  console.log(data);
+  const courseData= data.data;
+  console.log(courseData);
 
   return (
     <div className="tutorial-component">
@@ -29,9 +27,7 @@ export const LibraryCourse = (tutorialCourseData) => {
             <p>13 Likes</p>
           </div>
           <button
-            onClick={() => {
-              removeFromLibrary(data);
-            }}
+            onClick={()=>removeFromLibrary(data)}
           >
             Resign
           </button>

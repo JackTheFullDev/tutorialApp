@@ -12,7 +12,6 @@ function Home() {
     setInputValue(newValue);
   };
 
-  console.log(tutorialData.video);
 
   return (
     <section className="home-section">

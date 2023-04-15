@@ -17,7 +17,7 @@ export const Library = () => {
           {tutorialData.map((data, index) => {
             return (
              
-              <LibraryCourse data={data} key={index}></LibraryCourse>
+              <LibraryCourse data={data} key={index} removeFromLibrary={removeFromLibrary}></LibraryCourse>
             );
           })}
         </div>
