@@ -8,7 +8,7 @@ export const AddCourse = ({addData,deleteFunction}) =>
       <div className="tutorial-complex-data">
         <p>Start date: {data.tutorialStartDate}</p>
         <p>End date: {data.tutorialStartDate}</p>
-        <p>day/s: {data.days} </p>
+        <p>day/s: {data.tutorialDays.join("-")} </p>
         <p>
           amount: 0/{data.tutorialNumberOfPeople}
         </p>
@@ -23,9 +23,14 @@ export const AddCourse = ({addData,deleteFunction}) =>
             <p>13 Likes</p>
           </div>
           <button
-            onClick={()=>deleteFunction(data)}
+            onClick={()=>deleteFunction(data)}  style={{color:"yellow"}}
           >
-            Resign
+            edit
+          </button>
+          <button
+            onClick={()=>deleteFunction(data)} style={{color:"red"}}
+          >
+            delete
           </button>
         </div>
       </div>
