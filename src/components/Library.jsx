@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { HomeContext } from "./feature/HomeContext";
 
 import "./Library.css";
@@ -6,10 +6,12 @@ import { addContext } from "./feature/AddContext";
 
 import { LibraryCourse } from "./template/LibraryCourse";
 import { AddCourse } from "./template/AddCourse";
+import { EditCourse } from "./template/EditCourse";
 
 export const Library = () => {
   const { tutorialData, removeFromLibrary } = useContext(HomeContext);
   const { addTutorialData,removeAddedFromLibrary } = useContext(addContext);
+  const [showEdit,setShowEdit] = useState(false);
   return (
     <section className="home-section">
       <div className="home-content">
@@ -33,11 +35,17 @@ export const Library = () => {
                 addData={data}
                 key={index}
                 deleteCourseFunc={removeAddedFromLibrary}
-              ></AddCourse>
+                showEdit={showEdit}
+                setShowEdit={setShowEdit}
+              >
+                
+              </AddCourse>
             );
           })}
+           {showEdit && <EditCourse/>}
         </div>
       </div>
+     
     </section>
   );
 };
