@@ -5,11 +5,8 @@ import Slider from "@mui/material/Slider";
 import { useContext } from "react";
 import { AiOutlineUpload } from "react-icons/ai";
 import { useState } from "react";
-import { Form } from "react-router-dom";
 import { addContext } from "./feature/AddContext";
-
 import { ImagePicker } from "./template/ImagePicker";
-import uploadImg from "../../public/assets/upload.png";
 import { LevelPicker } from "./template/LevelPicker";
 import { DayPicker } from "./template/DayPicker";
 
@@ -36,7 +33,7 @@ export const Add = () => {
     const reader = new FileReader();
     reader.onload = () => {
       setSelectedImage(reader.result);
-      console.log(reader.result);
+      
     };
     reader.readAsDataURL(file);
     //end of file
@@ -238,6 +235,7 @@ export const Add = () => {
           </div>
         </div>
       </form>
+      
     </section>
   );
 };

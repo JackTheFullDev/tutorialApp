@@ -23,7 +23,7 @@ export const Navigation = () => {
   const handleCurrentPage = (_currentPageNumber) =>
   {
     setCurrentPage(_currentPageNumber);
-    console.log(currentPage);
+    
   }
   return (
     <section className="navigation">
