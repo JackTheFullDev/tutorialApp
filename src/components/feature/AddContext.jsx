@@ -9,7 +9,7 @@ export function AddProvider ({children})
     const addToLibrary = (_addTutorialData) =>
     {
         setAddTutorialData((_previewState) => [..._previewState,{_addTutorialData}]);
-            //console.log(addTutorialData);
+            
     } 
     const removeAddedFromLibrary = (id) =>
     {
@@ -20,8 +20,15 @@ export function AddProvider ({children})
         });
          //   console.log(addTutorialData);
     }
+    const editAddedCourse = (data,updatedData) =>
+    {   
+    
+        console.log(data);
+        
+       
+    }
     return(
-        <addContext.Provider value={{addToLibrary,addTutorialData,removeAddedFromLibrary}}>
+        <addContext.Provider value={{addToLibrary,addTutorialData,removeAddedFromLibrary,editAddedCourse}}>
             {children}
         </addContext.Provider>
     )

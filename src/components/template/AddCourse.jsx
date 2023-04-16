@@ -1,4 +1,4 @@
-export const AddCourse = ({addData,deleteCourseFunc,showEdit,setShowEdit}) =>
+export const AddCourse = ({addData,deleteCourseFunc,showEdit,setShowEdit,editAddedCourse}) =>
 {
   const data=addData._addTutorialData;
   
@@ -23,7 +23,7 @@ export const AddCourse = ({addData,deleteCourseFunc,showEdit,setShowEdit}) =>
             <p>13 Likes</p>
           </div>
           <button
-            onClick={()=>setShowEdit(!showEdit)}  style={{color:"yellow"}}
+            onClick={()=>editAddedCourse(data)}  style={{color:"yellow"}}
           >
             edit
           </button>

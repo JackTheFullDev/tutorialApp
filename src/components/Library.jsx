@@ -10,8 +10,8 @@ import { EditCourse } from "./template/EditCourse";
 
 export const Library = () => {
   const { tutorialData, removeFromLibrary } = useContext(HomeContext);
-  const { addTutorialData,removeAddedFromLibrary } = useContext(addContext);
-  const [showEdit,setShowEdit] = useState(false);
+  const { addTutorialData,removeAddedFromLibrary,editAddedCourse } = useContext(addContext);
+  const [showEdit,setShowEdit] = useState(!true);
   return (
     <section className="home-section">
       <div className="home-content">
@@ -37,12 +37,13 @@ export const Library = () => {
                 deleteCourseFunc={removeAddedFromLibrary}
                 showEdit={showEdit}
                 setShowEdit={setShowEdit}
+                editAddedCourse={editAddedCourse}
               >
                 
               </AddCourse>
             );
           })}
-           {showEdit && <EditCourse/>}
+           {showEdit && <EditCourse addTutorialData={addTutorialData}/>}
         </div>
       </div>
      
