@@ -12,6 +12,7 @@ import {Navigation} from "./components/feature/Navigation";
 import tutorialImg from "./data.json";
 import { HomeProvider } from "./components/feature/HomeContext";
 import { AddProvider } from "./components/feature/AddContext";
+import { Edit } from "./components/Edit";
 function App() {
 
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home/>}></Route>
           <Route path="/library" element={<Library />}></Route>
           <Route path="/add" element={<Add />}></Route>
+          <Route path="/edit" element={<Edit/>}></Route>
         </Routes>
       </Router>
       </AddProvider>
