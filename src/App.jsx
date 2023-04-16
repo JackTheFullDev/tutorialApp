@@ -25,7 +25,7 @@ function App() {
           <Route path="/" element={<Home/>}></Route>
           <Route path="/library" element={<Library />}></Route>
           <Route path="/add" element={<Add />}></Route>
-          <Route path="/edit" element={<Edit/>}></Route>
+          <Route path="/library/edit" element={<Edit/>}></Route>
         </Routes>
       </Router>
       </AddProvider>

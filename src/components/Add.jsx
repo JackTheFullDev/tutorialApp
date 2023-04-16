@@ -52,6 +52,7 @@ export const Add = () => {
       tutorialNumberOfPeople,
       tutorialLevel,
       selectedImage,
+      levelState
     };
     addToLibrary(tutorialObject);
   };

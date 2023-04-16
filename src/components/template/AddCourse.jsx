@@ -1,7 +1,16 @@
+import { Route, useNavigate } from "react-router-dom";
+import Edit from "../Edit";
+
 export const AddCourse = ({addData,deleteCourseFunc,showEdit,setShowEdit,editAddedCourse}) =>
 {
   const data=addData._addTutorialData;
   
+  let navigate =useNavigate();
+  const routeChange=()=>
+  {
+    let path='edit';
+    navigate(path,{state:{data}});
+  }
   return(
     <div className="tutorial-component">
       <img src={data.selectedImage} alt={data.tutorialname} />
@@ -23,7 +32,7 @@ export const AddCourse = ({addData,deleteCourseFunc,showEdit,setShowEdit,editAdd
             <p>13 Likes</p>
           </div>
           <button
-            onClick={()=>editAddedCourse(data)}  style={{color:"yellow"}}
+            onClick={routeChange}  style={{color:"yellow"}}
           >
             edit
           </button>
@@ -34,6 +43,7 @@ export const AddCourse = ({addData,deleteCourseFunc,showEdit,setShowEdit,editAdd
           </button>
         </div>
       </div>
+      <Edit data={data}></Edit>
     </div>
   )
 }

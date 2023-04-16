@@ -10,23 +10,24 @@ import { ImagePicker } from "./template/ImagePicker";
 import { LevelPicker } from "./template/LevelPicker";
 import { DayPicker } from "./template/DayPicker";
 
-export const Edit = (oldData) => {
+export const Edit = ({data:oldData}) => {
   const handleLevelValue = (event) => {
     const levels = ["Entry", "Beginner", "Junior", "Advanced", "Master"];
     const currentLevel = event.target.value;
     setLevelState(currentLevel);
     setTutorialLevel(levels[currentLevel]);
   };
-  const [tutorialname, setTutorialName] = useState("");
-  const [tutorialStartDate, setTutorialStartDate] = useState("");
-  const [tutorialEndDate, setTutorialEndDate] = useState("");
-  const [tutorialStartTime, setTutorialStartTime] = useState("");
-  const [tutorialEndTime, setTutorialEndTime] = useState("");
-  const [tutorialDays, setTutorialDays] = useState([]);
-  const [tutorialNumberOfPeople, setTutorialNumberOfPeople] = useState(0);
-  const [tutorialLevel, setTutorialLevel] = useState(0);
+  console.log(oldData)
+  const [tutorialname, setTutorialName] = useState(oldData.tutorialname);
+  const [tutorialStartDate, setTutorialStartDate] = useState(oldData.tutorialStartDate);
+  const [tutorialEndDate, setTutorialEndDate] = useState(oldData.tutorialEndDate);
+  const [tutorialStartTime, setTutorialStartTime] = useState(oldData.tutorialStartTime);
+  const [tutorialEndTime, setTutorialEndTime] = useState(oldData.tutorialEndTime);
+  const [tutorialDays, setTutorialDays] = useState(oldData.tutorialDays);
+  const [tutorialNumberOfPeople, setTutorialNumberOfPeople] = useState(oldData.tutorialNumberOfPeople);
+  const [tutorialLevel, setTutorialLevel] = useState(oldData.tutorialLevel);
   //image
-  const [selectedImage, setSelectedImage] = useState("");
+  const [selectedImage, setSelectedImage] = useState(oldData.selectedImage);
   const fileSelectedHandler = (event) => {
     event.preventDefault();
     const file = event.target.files[0];
@@ -64,7 +65,7 @@ export const Edit = (oldData) => {
         );
   };
   //uploadImageContent
-  const [levelState, setLevelState] = useState(0);
+  const [levelState, setLevelState] = useState(oldData.levelState);
   const dayOfWeek = [
     {
       id: 1,
