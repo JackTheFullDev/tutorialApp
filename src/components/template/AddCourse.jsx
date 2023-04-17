@@ -19,6 +19,7 @@ export const AddCourse = ({addData,deleteCourseFunc,index}) =>
         <p>Start date: {data.tutorialStartDate}</p>
         <p>End date: {data.tutorialStartDate}</p>
         <p>day/s: {data.tutorialDays.join("-")} </p>
+        <p>Time:{data.tutorialStartTime}-{data.tutorialEndTime}</p>
         <p>
           amount: 0/{data.tutorialNumberOfPeople}
         </p>

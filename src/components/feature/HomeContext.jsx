@@ -6,9 +6,9 @@ export function HomeProvider ({children})
 {
     const [tutorialData,setTutorialData]=useState([]);
 
-    const addToLibrary = (tutorialName,date,days,amount,level,image,canalName,maxAmount) =>
+    const addToLibrary = (tutorialName,date,days,amount,level,image,canalName,maxAmount,startTime,endTime) =>
     {
-        setTutorialData((_previewState) => [..._previewState,{tutorialName,date,days,amount,level,image,canalName,maxAmount}]);
+        setTutorialData((_previewState) => [..._previewState,{tutorialName,date,days,amount,level,image,canalName,maxAmount,startTime,endTime}]);
         
     }
 

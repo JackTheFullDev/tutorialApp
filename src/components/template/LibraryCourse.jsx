@@ -4,6 +4,7 @@
 export const LibraryCourse = ({data,courseFunction}) => {
  
 
+
   return (
     <div className="tutorial-component">
       <img src={data.image} alt={data.tutorialName} />
@@ -11,8 +12,9 @@ export const LibraryCourse = ({data,courseFunction}) => {
         <p>Start date: {data.date.startDate}</p>
         <p>End date: {data.date.endDate}</p>
         <p>day/s: {data.days.join("-")} </p>
+        <p>Time:{data.date.startTime}-{data.date.endTime}</p>
         <p>
-          amount: {data.amount}/{data["max-amount"]}
+          amount: {data.amount}/{data.maxAmount}
         </p>
         <p>level: {data.level}</p>
       </div>
