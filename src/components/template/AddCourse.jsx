@@ -1,10 +1,11 @@
 import { Route, useNavigate } from "react-router-dom";
 import Edit from "../Edit";
 
-export const AddCourse = ({addData,deleteCourseFunc}) =>
+export const AddCourse = ({addData,deleteCourseFunc,index}) =>
 {
   const data=addData._addTutorialData;
   
+  console.log(addData);
   let navigate =useNavigate();
   const routeChange=()=>
   {
@@ -32,7 +33,7 @@ export const AddCourse = ({addData,deleteCourseFunc}) =>
             <p>13 Likes</p>
           </div>
           <button
-            onClick={()=>console.log("edit button")}  style={{color:"yellow"}}
+            onClick={()=>console.log(index)}  style={{color:"yellow"}}
           >
             edit
           </button>
@@ -43,7 +44,7 @@ export const AddCourse = ({addData,deleteCourseFunc}) =>
           </button>
         </div>
       </div>
-      <Edit data={data}></Edit>
+      <Edit data={data} index={index}></Edit>
     </div>
   )
 }

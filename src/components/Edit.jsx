@@ -10,7 +10,7 @@ import { ImagePicker } from "./template/ImagePicker";
 import { LevelPicker } from "./template/LevelPicker";
 import { DayPicker } from "./template/DayPicker";
 
-export const Edit = ({data:oldData}) => {
+export const Edit = ({data:oldData,index}) => {
   const handleLevelValue = (event) => {
     const levels = ["Entry", "Beginner", "Junior", "Advanced", "Master"];
     const currentLevel = event.target.value;
@@ -55,7 +55,7 @@ export const Edit = ({data:oldData}) => {
       selectedImage,
     };
    // console.log(tutorialObject); // here new update 
-   editAddedCourse(tutorialObject);
+   editAddedCourse(index,tutorialObject);
   };
   const handleCheckBox = (event) => {
     const valueOfCheckbox = event.target.value;

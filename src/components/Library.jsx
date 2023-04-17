@@ -36,12 +36,13 @@ export const Library = () => {
                 addData={data}
                 key={index}
                 deleteCourseFunc={removeAddedFromLibrary}
+                index={index}
               >
                 
               </AddCourse>
             );
           })}
-           {showEdit && <Edit addTutorialData={addTutorialData}/>}
+           
         </div>
       </div>
      
