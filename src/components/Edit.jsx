@@ -17,7 +17,7 @@ export const Edit = ({data:oldData}) => {
     setLevelState(currentLevel);
     setTutorialLevel(levels[currentLevel]);
   };
-  console.log(oldData)
+ // console.log(oldData)
   const [tutorialname, setTutorialName] = useState(oldData.tutorialname);
   const [tutorialStartDate, setTutorialStartDate] = useState(oldData.tutorialStartDate);
   const [tutorialEndDate, setTutorialEndDate] = useState(oldData.tutorialEndDate);
@@ -33,14 +33,14 @@ export const Edit = ({data:oldData}) => {
     const file = event.target.files[0];
     const reader = new FileReader();
     reader.onload = () => {
-      setSelectedImage(reader.result);
+     selectedImage===""?setSelectedImage(reader.result):oldData.selectedImage;
       
     };
     reader.readAsDataURL(file);
     //end of file
   };
 
-  const { addToLibrary } = useContext(addContext);
+  const { addToLibrary,editAddedCourse } = useContext(addContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const tutorialObject = {
@@ -54,7 +54,8 @@ export const Edit = ({data:oldData}) => {
       tutorialLevel,
       selectedImage,
     };
-    addToLibrary(tutorialObject);
+   // console.log(tutorialObject); // here new update 
+   editAddedCourse(tutorialObject);
   };
   const handleCheckBox = (event) => {
     const valueOfCheckbox = event.target.value;

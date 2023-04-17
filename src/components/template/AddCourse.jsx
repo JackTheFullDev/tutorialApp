@@ -1,7 +1,7 @@
 import { Route, useNavigate } from "react-router-dom";
 import Edit from "../Edit";
 
-export const AddCourse = ({addData,deleteCourseFunc,showEdit,setShowEdit,editAddedCourse}) =>
+export const AddCourse = ({addData,deleteCourseFunc}) =>
 {
   const data=addData._addTutorialData;
   
@@ -32,7 +32,7 @@ export const AddCourse = ({addData,deleteCourseFunc,showEdit,setShowEdit,editAdd
             <p>13 Likes</p>
           </div>
           <button
-            onClick={routeChange}  style={{color:"yellow"}}
+            onClick={()=>console.log("edit button")}  style={{color:"yellow"}}
           >
             edit
           </button>

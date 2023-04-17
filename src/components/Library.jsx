@@ -7,6 +7,7 @@ import { addContext } from "./feature/AddContext";
 import { LibraryCourse } from "./template/LibraryCourse";
 import { AddCourse } from "./template/AddCourse";
 import { EditCourse } from "./template/EditCourse";
+import Edit from "./Edit";
 
 export const Library = () => {
   const { tutorialData, removeFromLibrary } = useContext(HomeContext);
@@ -35,15 +36,12 @@ export const Library = () => {
                 addData={data}
                 key={index}
                 deleteCourseFunc={removeAddedFromLibrary}
-                showEdit={showEdit}
-                setShowEdit={setShowEdit}
-                editAddedCourse={editAddedCourse}
               >
                 
               </AddCourse>
             );
           })}
-           {showEdit && <EditCourse addTutorialData={addTutorialData}/>}
+           {showEdit && <Edit addTutorialData={addTutorialData}/>}
         </div>
       </div>
      
