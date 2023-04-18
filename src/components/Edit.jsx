@@ -10,7 +10,7 @@ import { ImagePicker } from "./template/ImagePicker";
 import { LevelPicker } from "./template/LevelPicker";
 import { DayPicker } from "./template/DayPicker";
 
-export const Edit = ({data:oldData,index}) => {
+export const Edit = ({data:oldData,index,setShowEdit,showEdit}) => {
   const handleLevelValue = (event) => {
     const levels = ["Entry", "Beginner", "Junior", "Advanced", "Master"];
     const currentLevel = event.target.value;
@@ -33,7 +33,7 @@ export const Edit = ({data:oldData,index}) => {
     const file = event.target.files[0];
     const reader = new FileReader();
     reader.onload = () => {
-     selectedImage===""?setSelectedImage(reader.result):oldData.selectedImage;
+     selectedImage===oldData.selectedImage?setSelectedImage(reader.result):oldData.selectedImage;
       
     };
     reader.readAsDataURL(file);
@@ -55,7 +55,7 @@ export const Edit = ({data:oldData,index}) => {
       selectedImage,
     };
    // console.log(tutorialObject); // here new update 
-   editAddedCourse(index,tutorialObject);
+   editAddedCourse(index,tutorialObject );
   };
   const handleCheckBox = (event) => {
     const valueOfCheckbox = event.target.value;
@@ -95,6 +95,7 @@ export const Edit = ({data:oldData,index}) => {
   ];
   return (
     <section className="add-section">
+      <button className="close-edit-section-button" onClick={()=>setShowEdit(!showEdit)}>Close</button>
       <form onSubmit={handleSubmit}>
         <div className="left-add-section">
           <h1>
@@ -221,9 +222,8 @@ export const Edit = ({data:oldData,index}) => {
               onClick={(e) => {
                 handleSubmit;
               }}
-              style={{color:"yellow"}}
             >
-              Edit
+              Update
             </button>
           </div>
         </div>

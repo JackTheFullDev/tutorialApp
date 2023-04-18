@@ -11,12 +11,12 @@ export function AddProvider({ children }) {
       ..._previewState,
       { _addTutorialData },
     ]);
-    console.log(addTutorialData);
+  //  console.log(addTutorialData);
   };
   const removeAddedFromLibrary = (id) => {
     setAddTutorialData((_previewState) => {
       const tutorial = [..._previewState];
-      // console.log(tutorial);
+     // console.log( tutorial.splice(id, 1));
       tutorial.splice(id, 1);
       return tutorial;
     });
@@ -26,7 +26,7 @@ export function AddProvider({ children }) {
     setAddTutorialData((_previewState) => {
       const newTutorial = [..._previewState];
       newTutorial[id] = { _addTutorialData };
-      console.log(newTutorial);
+     // console.log(newTutorial);
       return newTutorial;
     });
   };

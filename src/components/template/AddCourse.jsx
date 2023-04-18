@@ -1,28 +1,22 @@
 import { Route, useNavigate } from "react-router-dom";
 import Edit from "../Edit";
+import { useState } from "react";
 
-export const AddCourse = ({addData,deleteCourseFunc,index}) =>
-{
-  const data=addData._addTutorialData;
-  
-  console.log(addData);
-  let navigate =useNavigate();
-  const routeChange=()=>
-  {
-    let path='edit';
-    navigate(path,{state:{data}});
-  }
-  return(
+export const AddCourse = ({ addData, deleteCourseFunc, index }) => {
+  const data = addData._addTutorialData;
+  const [showEdit, setShowEdit] = useState(false);
+
+  return (
     <div className="tutorial-component">
       <img src={data.selectedImage} alt={data.tutorialname} />
       <div className="tutorial-complex-data">
         <p>Start date: {data.tutorialStartDate}</p>
         <p>End date: {data.tutorialStartDate}</p>
         <p>day/s: {data.tutorialDays.join("-")} </p>
-        <p>Time:{data.tutorialStartTime}-{data.tutorialEndTime}</p>
         <p>
-          amount: 0/{data.tutorialNumberOfPeople}
+          Time:{data.tutorialStartTime}-{data.tutorialEndTime}
         </p>
+        <p>amount: 0/{data.tutorialNumberOfPeople}</p>
         <p>level: {data.tutorialLevel}</p>
       </div>
       <div className="inner-info-content">
@@ -34,18 +28,29 @@ export const AddCourse = ({addData,deleteCourseFunc,index}) =>
             <p>13 Likes</p>
           </div>
           <button
-            onClick={()=>console.log(index)}  style={{color:"yellow"}}
+            onClick={() => setShowEdit(!showEdit)}
+            style={{ color: "yellow" }}
           >
             edit
           </button>
           <button
-            onClick={()=>deleteCourseFunc(data)} style={{color:"red"}}
+            onClick={() => deleteCourseFunc(index)}
+            style={{ color: "red" }}
           >
             delete
           </button>
         </div>
       </div>
-      <Edit data={data} index={index}></Edit>
+      {showEdit && (
+        <div className="edit-content">
+          <Edit
+            data={data}
+            index={index}
+            showEdit={showEdit}
+            setShowEdit={setShowEdit}
+          ></Edit>
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};

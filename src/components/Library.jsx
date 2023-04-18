@@ -29,7 +29,7 @@ export const Library = () => {
           })}
         </div>
         <p>Content you created</p>
-        <div>
+        <div className="grid-with-home-content">
           {addTutorialData.map((data, index) => {
             return (
               <AddCourse
@@ -38,14 +38,17 @@ export const Library = () => {
                 deleteCourseFunc={removeAddedFromLibrary}
                 index={index}
               >
-                
+      
               </AddCourse>
             );
           })}
            
         </div>
+       <div style={{position:"absolute" , backgroundColor:"red", minwidth:"30px" , top:"25%"}}>
+        HereMakeEdit
+       </div>
       </div>
-     
+      
     </section>
   );
 };
