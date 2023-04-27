@@ -24,7 +24,7 @@ export const Add = () => {
   const [tutorialEndTime, setTutorialEndTime] = useState("");
   const [tutorialDays, setTutorialDays] = useState([]);
   const [tutorialNumberOfPeople, setTutorialNumberOfPeople] = useState(0);
-  const [tutorialLevel, setTutorialLevel] = useState(0);
+  const [tutorialLevel, setTutorialLevel] = useState("Entry");
   //image
   const [selectedImage, setSelectedImage] = useState("");
   const fileSelectedHandler = (event) => {

@@ -11,8 +11,8 @@ import Edit from "./Edit";
 
 export const Library = () => {
   const { tutorialData, removeFromLibrary } = useContext(HomeContext);
-  const { addTutorialData,removeAddedFromLibrary,editAddedCourse } = useContext(addContext);
-  const [showEdit,setShowEdit] = useState(!true);
+  const { addTutorialData,removeAddedFromLibrary } = useContext(addContext);
+  
   return (
     <section className="home-section">
       <div className="home-content">
@@ -46,6 +46,7 @@ export const Library = () => {
         </div>
        <div style={{position:"absolute" , backgroundColor:"red", minwidth:"30px" , top:"25%"}}>
         HereMakeEdit
+        
        </div>
       </div>
       

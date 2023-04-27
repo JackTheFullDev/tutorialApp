@@ -5,22 +5,35 @@ import { useState } from "react";
 export const AddCourse = ({ addData, deleteCourseFunc, index }) => {
   const data = addData._addTutorialData;
   const [showEdit, setShowEdit] = useState(false);
-
+  console.log(addData);
+  const {
+    selectedImage,
+    tutorialname,
+    tutorialStartDate,
+    tutorialEndDate,
+    tutorialDays,
+    tutorialStartTime,
+    tutorialEndTime,
+    tutorialNumberOfPeople,
+    tutorialLevel,
+    
+  } = addData._addTutorialData;
+  console.log(tutorialname);
   return (
     <div className="tutorial-component">
-      <img src={data.selectedImage} alt={data.tutorialname} />
+      <img src={selectedImage} alt={tutorialname} />
       <div className="tutorial-complex-data">
-        <p>Start date: {data.tutorialStartDate}</p>
-        <p>End date: {data.tutorialStartDate}</p>
-        <p>day/s: {data.tutorialDays.join("-")} </p>
+        <p>Start date: {tutorialStartDate}</p>
+        <p>End date: {tutorialEndDate}</p>
+        <p>day/s: {tutorialDays.join("-")} </p>
         <p>
-          Time:{data.tutorialStartTime}-{data.tutorialEndTime}
+          Time:{tutorialStartTime}-{tutorialEndTime}
         </p>
-        <p>amount: 0/{data.tutorialNumberOfPeople}</p>
-        <p>level: {data.tutorialLevel}</p>
+        <p>amount: 0/{tutorialNumberOfPeople}</p>
+        <p>level: {tutorialLevel}</p>
       </div>
       <div className="inner-info-content">
-        <h1 id="tutorial-name">{data.tutorialname}</h1>
+        <h1 id="tutorial-name">{tutorialname}</h1>
         <p id="canal-name">UserNew</p>
         <div className="bottom-tutorial-components">
           <div className="bottom-totalhour-likes">
