@@ -1,9 +1,9 @@
 import { MdWidthFull } from "react-icons/md";
 import "./Add.css";
+import "./style/EditCourse.css"
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { useContext } from "react";
-import { AiOutlineUpload } from "react-icons/ai";
 import { useState } from "react";
 import { addContext } from "./feature/AddContext";
 import { ImagePicker } from "./template/ImagePicker";
@@ -94,7 +94,7 @@ export const Edit = ({data:oldData,index,setShowEdit,showEdit}) => {
     },
   ];
   return (
-    <section className="add-section">
+    <section className="edit-section">
       <button className="close-edit-section-button" onClick={()=>setShowEdit(!showEdit)}>Close</button>
       <form onSubmit={handleSubmit}>
         <div className="left-add-section">

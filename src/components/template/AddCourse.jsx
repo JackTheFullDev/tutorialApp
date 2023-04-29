@@ -1,4 +1,4 @@
-import { Route, useNavigate } from "react-router-dom";
+import { Link, Route, useNavigate } from "react-router-dom";
 import Edit from "../Edit";
 import { useState } from "react";
 
@@ -18,7 +18,11 @@ export const AddCourse = ({ addData, deleteCourseFunc, index }) => {
     tutorialLevel,
     
   } = addData._addTutorialData;
-  console.log(tutorialname);
+ 
+  const handleEdit =()=>
+  {
+    return <Link to="/library/edit"></Link>
+  }
   return (
     <div className="tutorial-component">
       <img src={selectedImage} alt={tutorialname} />
@@ -46,6 +50,7 @@ export const AddCourse = ({ addData, deleteCourseFunc, index }) => {
           >
             edit
           </button>
+          {/* <Link to="/library/edit">editpage</Link> */}
           <button
             onClick={() => deleteCourseFunc(index)}
             style={{ color: "red" }}

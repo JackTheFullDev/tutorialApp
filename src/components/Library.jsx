@@ -32,22 +32,24 @@ export const Library = () => {
         <div className="grid-with-home-content">
           {addTutorialData.map((data, index) => {
             return (
+              <>
               <AddCourse
                 addData={data}
                 key={index}
                 deleteCourseFunc={removeAddedFromLibrary}
                 index={index}
               >
-      
               </AddCourse>
+             {/* <Edit
+            data={data}
+            index={index}
+            style={{position:"absolute"}}
+          ></Edit>  */}
+              </>
             );
           })}
            
         </div>
-       <div style={{position:"absolute" , backgroundColor:"red", minwidth:"30px" , top:"25%"}}>
-        HereMakeEdit
-        
-       </div>
       </div>
       
     </section>
