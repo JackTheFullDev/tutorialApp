@@ -5,7 +5,6 @@ import { useState } from "react";
 export const AddCourse = ({ addData, deleteCourseFunc, index }) => {
   const data = addData._addTutorialData;
   const [showEdit, setShowEdit] = useState(false);
-  console.log(addData);
   const {
     selectedImage,
     tutorialname,

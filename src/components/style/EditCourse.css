@@ -7,7 +7,7 @@
 }
 .edit-section
 {
-    min-width: 300px;
+    min-width: 3px;
     background: transparent;
 
   
@@ -20,12 +20,16 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background-color: black;
-   min-width: 400px;
-   z-index: 100;
+  background: linear-gradient(#362f50,#48319d);
+  
+   
 
 }
-
+form{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
 .close-edit-section-button
 {
     position: absolute;
