@@ -1,6 +1,7 @@
 import { Link, Route, useNavigate } from "react-router-dom";
 import Edit from "../Edit";
 import { useState } from "react";
+import { ComplexDate } from "./ComplexDate";
 
 export const AddCourse = ({ addData, deleteCourseFunc, index }) => {
   const data = addData._addTutorialData;
@@ -17,11 +18,8 @@ export const AddCourse = ({ addData, deleteCourseFunc, index }) => {
     tutorialLevel,
     
   } = addData._addTutorialData;
- 
-  const handleEdit =()=>
-  {
-    return <Link to="/library/edit"></Link>
-  }
+ //napraw by addData zwracalo to samo co data ulatwi to stworzenie globalnego componentu
+  
   return (
     <div className="tutorial-component">
       <img src={selectedImage} alt={tutorialname} />

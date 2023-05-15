@@ -5,18 +5,19 @@ import { ComplexDate } from "./ComplexDate";
 export const Course = (tutorialCourseData) => {
   const { addToLibrary } = useContext(HomeContext);
   const data = tutorialCourseData.data;
+  const {image,tutorialName,canalName,totalHour}=data;
   
   return (
     <div className="tutorial-component">
-      <img src={data.image} alt={data.tutorialName} />
+      <img src={image} alt={tutorialName} />
       <ComplexDate data={data}></ComplexDate>
       <div className="inner-info-content">
-        <h1 id="tutorial-name">{data.tutorialName}</h1>
-        <p id="canal-name">{data.canalName}</p>
+        <h1 id="tutorial-name">{tutorialName}</h1>
+        <p id="canal-name">{canalName}</p>
         <div className="bottom-tutorial-components">
           <div className="bottom-totalhour-likes">
-            <p>{data.totalHour}h video</p>
-            <p>{data.totalHour}Likes</p>
+            <p>{totalHour}h video</p>
+            <p>{totalHour}Likes</p>
           </div>
           <button
             onClick={() => {

@@ -4,11 +4,11 @@ import { ComplexDate } from "./ComplexDate";
 
 export const LibraryCourse = ({data,courseFunction}) => {
  
-//console.log(data)
+
 
 const {tutorialName,image,canalName}=data;
 
-console.log(data)
+//console.log(data)
 
   return (
     <div className="tutorial-component">
