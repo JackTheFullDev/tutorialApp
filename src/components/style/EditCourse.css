@@ -12,6 +12,13 @@
 
   
 }
+input
+{
+    outline: none;
+    padding: 7px;
+    border-radius: 5px;
+    border-style: none;
+}
 
 .edit-content
 {
@@ -24,6 +31,19 @@
   
    
 
+}
+.close-edit-section-button
+{
+    border-radius: 20px;
+    padding: 10px;
+    background-color: transparent;
+    border-style: none;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.close-edit-section-button:hover
+{
+    border:1px solid #48319d;
 }
 form{
     width: 100vw;
