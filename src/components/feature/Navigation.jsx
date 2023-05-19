@@ -9,8 +9,10 @@ import { useState } from "react";
 import { NavigationLink } from "../template/NavigationLink";
 import { ThanksDiv } from "../template/thanksDiv";
 export const Navigation = () => {
-  const iconStyle = { color: "white", fontSize: "1.5em" }; //wywal
-
+  const iconStyle = { color: "white", fontSize: "1.5em" }; 
+  
+  const [currentPage, setCurrentPage] = useState(1);
+ 
   return (
     <section className="navigation">
       <div className="user-navigation">
@@ -23,6 +25,8 @@ export const Navigation = () => {
           icon={<AiFillHome style={iconStyle} />}
           pageNr={1}
           page={"home"}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
         />
 
         <NavigationLink
@@ -30,6 +34,8 @@ export const Navigation = () => {
           icon={<MdVideoLibrary style={iconStyle} />}
           pageNr={2}
           page={"library"}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
         />
 
         <NavigationLink
@@ -37,6 +43,8 @@ export const Navigation = () => {
           icon={<IoAdd style={iconStyle} />}
           pageNr={3}
           page={"add"}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
         />
       </ul>
       <ThanksDiv />
