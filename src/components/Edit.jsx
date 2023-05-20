@@ -9,6 +9,7 @@ import { addContext } from "./feature/AddContext";
 import { ImagePicker } from "./template/ImagePicker";
 import { LevelPicker } from "./template/LevelPicker";
 import { DayPicker } from "./template/DayPicker";
+import { InfoSmallLabel } from "./template/InfoSmallLabel";
 
 export const Edit = ({data:oldData,index,setShowEdit,showEdit}) => {
   const handleLevelValue = (event) => {
@@ -99,55 +100,21 @@ export const Edit = ({data:oldData,index,setShowEdit,showEdit}) => {
       <form onSubmit={handleSubmit}>
         <div className="left-add-section">
           <h1>
-            Edit <span>Your</span> Tutorial
+            Edit <span style={{color:"#57F049"}}>Your</span> Tutorial
           </h1>
-          <div className="label-input-add-section">
-            <p className="info-small-label">Tutorial Name</p>
-            <input
-              type="text"
-              placeholder="Name..."
-              value={tutorialname}
-              onChange={(e) => setTutorialName(e.target.value)}
-            />
-          </div>
+          
+          <InfoSmallLabel className={"label-input-add-section"} infoText={"Tutorial Name"} value={tutorialname} setData={setTutorialName} inputType={"text"}/>
+         
           <div className="date-add-section">
-            <div>
-              <p className="info-small-label">Start Date</p>
-              <input
-                type="date"
-                value={tutorialStartDate}
-                onChange={(e) => setTutorialStartDate(e.target.value)}
-              />
-            </div>
-            <div>
-              <p className="info-small-label">End Date</p>
-              <input
-                type="date"
-                value={tutorialEndDate}
-                onChange={(e) => setTutorialEndDate(e.target.value)}
-              />
-            </div>
+            <InfoSmallLabel className={""} infoText={"Start Date"} value={tutorialStartDate} setData={setTutorialStartDate} inputType={"date"}/>
+            <InfoSmallLabel className={""} infoText={"End Date"} value={tutorialEndDate} setData={setTutorialEndDate} inputType={"date"}/>
           </div>
           <div className="time-add-section">
-            <div>
-              <p className="info-small-label">Start time</p>
-              <input
-                type="time"
-                value={tutorialStartTime}
-                onChange={(e) => setTutorialStartTime(e.target.value)}
-              />
-            </div>
-            <div>
-              <p className="info-small-label">End time</p>
-              <input
-                type="time"
-                value={tutorialEndTime}
-                onChange={(e) => setTutorialEndTime(e.target.value)}
-              />
-            </div>
+            <InfoSmallLabel className={""} infoText={"Start time"} value={tutorialStartTime} setData={setTutorialStartTime} inputType={"time"}/>
+            <InfoSmallLabel className={""} infoText={"End time"} value={tutorialEndTime} setData={setTutorialEndTime} inputType={"time"}/>
           </div>
           <h2>
-            Select a <span>day</span> of the week
+            Select a <span style={{color:"#57F049"}}>day</span> of the week
           </h2>
           <div className="dayOfTheWeek-add-section">
             <div className="checkboxes-add-section">
