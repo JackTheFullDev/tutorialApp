@@ -34,7 +34,6 @@ export const Add = () => {
     const reader = new FileReader();
     reader.onload = () => {
       setSelectedImage(reader.result);
-      
     };
     reader.readAsDataURL(file);
     //end of file
@@ -53,7 +52,7 @@ export const Add = () => {
       tutorialNumberOfPeople,
       tutorialLevel,
       selectedImage,
-      levelState
+      levelState,
     };
     addToLibrary(tutorialObject);
   };
@@ -100,15 +99,45 @@ export const Add = () => {
           <h1>
             Create <span>New</span> Tutorial
           </h1>
-          
-          <InfoSmallLabel className={"left-add-section"} infoText={"Tutorial Name"} value={tutorialname} setData={setTutorialName} inputType={"text"}/>
+
+          <InfoSmallLabel
+            className={"left-add-section"}
+            infoText={"Tutorial Name"}
+            value={tutorialname}
+            setData={setTutorialName}
+            inputType={"text"}
+          />
           <div className="date-add-section">
-          <InfoSmallLabel className={"left-add-section"} infoText={"Start date"} value={tutorialStartDate} setData={setTutorialStartDate} inputType={"date"}/>
-          <InfoSmallLabel className={"left-add-section"} infoText={"End date"} value={tutorialEndDate} setData={setTutorialEndDate} inputType={"date"}/>
+            <InfoSmallLabel
+              className={"left-add-section"}
+              infoText={"Start date"}
+              value={tutorialStartDate}
+              setData={setTutorialStartDate}
+              inputType={"date"}
+            />
+            <InfoSmallLabel
+              className={"left-add-section"}
+              infoText={"End date"}
+              value={tutorialEndDate}
+              setData={setTutorialEndDate}
+              inputType={"date"}
+            />
           </div>
           <div className="time-add-section">
-          <InfoSmallLabel className={"left-add-section"} infoText={"Start time"} value={tutorialStartTime} setData={setTutorialStartTime} inputType={"time"}/>
-          <InfoSmallLabel className={"left-add-section"} infoText={"End time"} value={tutorialEndTime} setData={setTutorialEndTime} inputType={"time"}/>
+            <InfoSmallLabel
+              className={"left-add-section"}
+              infoText={"Start time"}
+              value={tutorialStartTime}
+              setData={setTutorialStartTime}
+              inputType={"time"}
+            />
+            <InfoSmallLabel
+              className={"left-add-section"}
+              infoText={"End time"}
+              value={tutorialEndTime}
+              setData={setTutorialEndTime}
+              inputType={"time"}
+            />
           </div>
           <h2>
             Select a <span>day</span> of the week
@@ -119,7 +148,7 @@ export const Add = () => {
                 day={dayOfWeek[0]}
                 handleCheckBox={handleCheckBox}
               ></DayPicker>
-             
+
               <DayPicker
                 day={dayOfWeek[1]}
                 handleCheckBox={handleCheckBox}
@@ -202,7 +231,6 @@ export const Add = () => {
           </div>
         </div>
       </form>
-      
     </section>
   );
 };

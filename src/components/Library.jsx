@@ -1,22 +1,21 @@
 import { useContext, useState } from "react";
 import { HomeContext } from "./feature/HomeContext";
 
-import "./Library.css";
 import { addContext } from "./feature/AddContext";
 
 import { LibraryCourse } from "./template/LibraryCourse";
 import { AddCourse } from "./template/AddCourse";
-import { EditCourse } from "./template/EditCourse";
-import Edit from "./Edit";
 
 export const Library = () => {
   const { tutorialData, removeFromLibrary } = useContext(HomeContext);
-  const { addTutorialData,removeAddedFromLibrary } = useContext(addContext);
+  const { addTutorialData, removeAddedFromLibrary } = useContext(addContext);
+
   
   return (
     <section className="home-section">
+      <h1>Library</h1>
       <div className="home-content">
-        <p>Content you signed up for </p>
+       {tutorialData.length>0?<p>Content you signed up for </p>:null}
         <div className="grid-with-home-content">
           {tutorialData.map((data, index) => {
             return (
@@ -28,30 +27,22 @@ export const Library = () => {
             );
           })}
         </div>
-        <p>Content you created</p>
+        {addTutorialData.length>0?<p>Content you created</p>:null}
         <div className="grid-with-home-content">
           {addTutorialData.map((data, index) => {
             return (
               <>
-              <AddCourse
-                addData={data}
-                key={index}
-                deleteCourseFunc={removeAddedFromLibrary}
-                index={index}
-              >
-              </AddCourse>
-             {/* <Edit
-            data={data}
-            index={index}
-            style={{position:"absolute"}}
-          ></Edit>  */}
+                <AddCourse
+                  addData={data}
+                  key={index}
+                  deleteCourseFunc={removeAddedFromLibrary}
+                  index={index}
+                ></AddCourse>
               </>
             );
           })}
-           
         </div>
       </div>
-      
     </section>
   );
 };

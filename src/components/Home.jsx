@@ -1,7 +1,6 @@
 import "./Home.css";
 import tutorialData from "../data.json";
 import { useState } from "react";
-import { Warning } from "./feature/Warning";
 import { Course } from "./template/Course";
 import { SearchBar } from "./template/SearchBar";
 
@@ -11,7 +10,6 @@ function Home() {
     const newValue = event.target.value.toLowerCase();
     setInputValue(newValue);
   };
-
 
   return (
     <section className="home-section">
@@ -28,7 +26,7 @@ function Home() {
               );
             })
             .map((data, index) => {
-              return <Course key={index} data={data} ></Course>;
+              return <Course key={index} data={data}></Course>;
             })}
         </div>
       </div>

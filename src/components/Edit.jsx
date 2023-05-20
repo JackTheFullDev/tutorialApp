@@ -1,6 +1,6 @@
 import { MdWidthFull } from "react-icons/md";
 import "./Add.css";
-import "./style/EditCourse.css"
+import "./style/EditCourse.css";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { useContext } from "react";
@@ -11,21 +11,31 @@ import { LevelPicker } from "./template/LevelPicker";
 import { DayPicker } from "./template/DayPicker";
 import { InfoSmallLabel } from "./template/InfoSmallLabel";
 
-export const Edit = ({data:oldData,index,setShowEdit,showEdit}) => {
+export const Edit = ({ data: oldData, index, setShowEdit, showEdit }) => {
   const handleLevelValue = (event) => {
     const levels = ["Entry", "Beginner", "Junior", "Advanced", "Master"];
     const currentLevel = event.target.value;
     setLevelState(currentLevel);
     setTutorialLevel(levels[currentLevel]);
   };
- // console.log(oldData)
+  // console.log(oldData)
   const [tutorialname, setTutorialName] = useState(oldData.tutorialname);
-  const [tutorialStartDate, setTutorialStartDate] = useState(oldData.tutorialStartDate);
-  const [tutorialEndDate, setTutorialEndDate] = useState(oldData.tutorialEndDate);
-  const [tutorialStartTime, setTutorialStartTime] = useState(oldData.tutorialStartTime);
-  const [tutorialEndTime, setTutorialEndTime] = useState(oldData.tutorialEndTime);
+  const [tutorialStartDate, setTutorialStartDate] = useState(
+    oldData.tutorialStartDate
+  );
+  const [tutorialEndDate, setTutorialEndDate] = useState(
+    oldData.tutorialEndDate
+  );
+  const [tutorialStartTime, setTutorialStartTime] = useState(
+    oldData.tutorialStartTime
+  );
+  const [tutorialEndTime, setTutorialEndTime] = useState(
+    oldData.tutorialEndTime
+  );
   const [tutorialDays, setTutorialDays] = useState(oldData.tutorialDays);
-  const [tutorialNumberOfPeople, setTutorialNumberOfPeople] = useState(oldData.tutorialNumberOfPeople);
+  const [tutorialNumberOfPeople, setTutorialNumberOfPeople] = useState(
+    oldData.tutorialNumberOfPeople
+  );
   const [tutorialLevel, setTutorialLevel] = useState(oldData.tutorialLevel);
   //image
   const [selectedImage, setSelectedImage] = useState(oldData.selectedImage);
@@ -34,14 +44,15 @@ export const Edit = ({data:oldData,index,setShowEdit,showEdit}) => {
     const file = event.target.files[0];
     const reader = new FileReader();
     reader.onload = () => {
-     selectedImage===oldData.selectedImage?setSelectedImage(reader.result):oldData.selectedImage;
-      
+      selectedImage === oldData.selectedImage
+        ? setSelectedImage(reader.result)
+        : oldData.selectedImage;
     };
     reader.readAsDataURL(file);
     //end of file
   };
 
-  const { addToLibrary,editAddedCourse } = useContext(addContext);
+  const { addToLibrary, editAddedCourse } = useContext(addContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const tutorialObject = {
@@ -55,8 +66,8 @@ export const Edit = ({data:oldData,index,setShowEdit,showEdit}) => {
       tutorialLevel,
       selectedImage,
     };
-   // console.log(tutorialObject); // here new update 
-   editAddedCourse(index,tutorialObject );
+    // console.log(tutorialObject); // here new update
+    editAddedCourse(index, tutorialObject);
   };
   const handleCheckBox = (event) => {
     const valueOfCheckbox = event.target.value;
@@ -96,25 +107,60 @@ export const Edit = ({data:oldData,index,setShowEdit,showEdit}) => {
   ];
   return (
     <section className="edit-section">
-      <button className="close-edit-section-button" onClick={()=>setShowEdit(!showEdit)}>Close</button>
+      <button
+        className="close-edit-section-button"
+        onClick={() => setShowEdit(!showEdit)}
+      >
+        Close
+      </button>
       <form onSubmit={handleSubmit}>
         <div className="left-add-section">
           <h1>
-            Edit <span style={{color:"#57F049"}}>Your</span> Tutorial
+            Edit <span style={{ color: "#57F049" }}>Your</span> Tutorial
           </h1>
-          
-          <InfoSmallLabel className={"label-input-add-section"} infoText={"Tutorial Name"} value={tutorialname} setData={setTutorialName} inputType={"text"}/>
-         
+
+          <InfoSmallLabel
+            className={"label-input-add-section"}
+            infoText={"Tutorial Name"}
+            value={tutorialname}
+            setData={setTutorialName}
+            inputType={"text"}
+          />
+
           <div className="date-add-section">
-            <InfoSmallLabel className={""} infoText={"Start Date"} value={tutorialStartDate} setData={setTutorialStartDate} inputType={"date"}/>
-            <InfoSmallLabel className={""} infoText={"End Date"} value={tutorialEndDate} setData={setTutorialEndDate} inputType={"date"}/>
+            <InfoSmallLabel
+              className={""}
+              infoText={"Start Date"}
+              value={tutorialStartDate}
+              setData={setTutorialStartDate}
+              inputType={"date"}
+            />
+            <InfoSmallLabel
+              className={""}
+              infoText={"End Date"}
+              value={tutorialEndDate}
+              setData={setTutorialEndDate}
+              inputType={"date"}
+            />
           </div>
           <div className="time-add-section">
-            <InfoSmallLabel className={""} infoText={"Start time"} value={tutorialStartTime} setData={setTutorialStartTime} inputType={"time"}/>
-            <InfoSmallLabel className={""} infoText={"End time"} value={tutorialEndTime} setData={setTutorialEndTime} inputType={"time"}/>
+            <InfoSmallLabel
+              className={""}
+              infoText={"Start time"}
+              value={tutorialStartTime}
+              setData={setTutorialStartTime}
+              inputType={"time"}
+            />
+            <InfoSmallLabel
+              className={""}
+              infoText={"End time"}
+              value={tutorialEndTime}
+              setData={setTutorialEndTime}
+              inputType={"time"}
+            />
           </div>
           <h2>
-            Select a <span style={{color:"#57F049"}}>day</span> of the week
+            Select a <span style={{ color: "#57F049" }}>day</span> of the week
           </h2>
           <div className="dayOfTheWeek-add-section">
             <div className="checkboxes-add-section">
@@ -122,7 +168,7 @@ export const Edit = ({data:oldData,index,setShowEdit,showEdit}) => {
                 day={dayOfWeek[0]}
                 handleCheckBox={handleCheckBox}
               ></DayPicker>
-             
+
               <DayPicker
                 day={dayOfWeek[1]}
                 handleCheckBox={handleCheckBox}
@@ -205,7 +251,6 @@ export const Edit = ({data:oldData,index,setShowEdit,showEdit}) => {
           </div>
         </div>
       </form>
-      
     </section>
   );
 };
