@@ -18,7 +18,7 @@ function Home() {
     {
       try{
         const res=await  axios.get("http://localhost:3000/users");
-        console.log(res)
+        //console.log(res)
       }
       catch(err)
       {

@@ -20,7 +20,7 @@ export const Navigation = () => {
   const {user,handleLogOut} =
   useContext(userContext);
 
-  console.log(user,)
+  //console.log(user,)
   return (
     <section className="navigation">
       <div className="user-navigation">

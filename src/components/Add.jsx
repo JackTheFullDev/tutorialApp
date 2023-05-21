@@ -3,13 +3,14 @@ import "./Add.css";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { useContext } from "react";
-import { AiOutlineUpload } from "react-icons/ai";
+import axios from "axios";
 import { useState } from "react";
 import { addContext } from "./feature/AddContext";
 import { ImagePicker } from "./template/ImagePicker";
 import { LevelPicker } from "./template/LevelPicker";
 import { DayPicker } from "./template/DayPicker";
 import { InfoSmallLabel } from "./template/InfoSmallLabel";
+import { userContext } from "./feature/UserContext";
 
 export const Add = () => {
   const handleLevelValue = (event) => {
@@ -38,7 +39,14 @@ export const Add = () => {
     reader.readAsDataURL(file);
     //end of file
   };
+  const {user} =
+  useContext(userContext);
+ 
+  
+  const{id}=user || null;
+  //console.log(id)
 
+  let tutorial_role="user";
   const { addToLibrary } = useContext(addContext);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,9 +60,40 @@ export const Add = () => {
       tutorialNumberOfPeople,
       tutorialLevel,
       selectedImage,
-      levelState,
+      levelState
     };
     addToLibrary(tutorialObject);
+    console.log(tutorialObject);
+
+    fetch("http://localhost:3000/tutorials", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(
+       { tutorialname,
+        tutorialStartDate,
+        tutorialEndDate,
+        tutorialStartTime,
+        tutorialEndTime,
+        tutorialDays,
+        tutorialNumberOfPeople,
+        tutorialLevel,
+        selectedImage,
+        levelState,
+      id,
+      tutorial_role}
+
+      ),
+      // body: JSON.stringify({ username, password }),
+    })
+      .then((response) => {
+        console.log(response.data); // Handle the response as needed
+      })
+      .catch((error) => {
+        console.error("Error creating tutorial:", error);
+        // Handle the error as needed
+      });
   };
   const handleCheckBox = (event) => {
     const valueOfCheckbox = event.target.value;
