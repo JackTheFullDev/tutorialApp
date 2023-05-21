@@ -1,8 +1,13 @@
 
 
-export const UserCourses=({tutorialData,setShowEdit,deleteCourseFunc,showEdit})=>
+export const UserCourses=({tutorialData,setShowEdit,deleteTutorial,showEdit,index})=>
 {
-    const {end_date,end_time,images,level,max_people,start_date,start_time,title}=tutorialData
+    const {end_date,end_time,images,level,max_people,start_date,start_time,title}=tutorialData;
+    const handleDelete = (tutorialId) => {
+        // Call the deleteTutorial function with the tutorial ID
+        deleteTutorial(tutorialId);
+      };
+      console.log(typeof(deleteTutorial));
     return (
         <div className="tutorial-component">
           <img src={images} alt={title} />
@@ -30,9 +35,9 @@ export const UserCourses=({tutorialData,setShowEdit,deleteCourseFunc,showEdit})=
               >
                 edit
               </button>
-              {/* <Link to="/library/edit">editpage</Link> */}
               <button
-                onClick={() => deleteCourseFunc(index)}
+               // onClick={() => deleteCourseFunc(index)}
+               onClick={()=>handleDelete(index)}
                 style={{ color: "red" }}
               >
                 delete

@@ -12,16 +12,14 @@ export const Library = () => {
   const { tutorialData, removeFromLibrary } = useContext(HomeContext);
   const { addTutorialData, removeAddedFromLibrary } = useContext(addContext);
 
-  const {user,tutorials} =
-  useContext(userContext);
+  const { user, tutorials ,deleteTutorial,editTutorial} = useContext(userContext);
 
-  console.log(tutorials);
- 
+
   return (
     <section className="home-section">
       <h1>Library</h1>
       <div className="home-content">
-       {tutorialData.length>0?<p>Content you signed up for </p>:null}
+        {tutorialData.length > 0 ? <p>Content you signed up for </p> : null}
         <div className="grid-with-home-content">
           {tutorialData.map((data, index) => {
             return (
@@ -33,35 +31,20 @@ export const Library = () => {
             );
           })}
         </div>
-        {addTutorialData.length>0?<p>Content you created</p>:null}
-        <div className="grid-with-home-content">
-          {addTutorialData.map((data, index) => {
-            return (
-              <>
-                <AddCourse
-                  addData={data}
-                  key={index}
-                  deleteCourseFunc={removeAddedFromLibrary}
-                  index={index}
-                ></AddCourse>
-              </>
-            );
-          })}
-        </div>
-      {tutorials.map((data,index)=>
-      {
-        return(
-          <img src={data.images}/>
-        )
-      })}
-        {tutorials.map((data, index) => {
+        
+        <div className="grid-with-home-content"></div>
+        {user && <p>Content you created</p>}
+        {user &&
+          tutorials.map((data, index) => {
             return (
               <>
                 <UserCourses
                   tutorialData={data}
                   key={index}
                   deleteCourseFunc={removeAddedFromLibrary}
-                  index={index}
+                  index={data.tutorial_id}
+                deleteTutorial={deleteTutorial}
+                editTutorial={editTutorial}
                 ></UserCourses>
               </>
             );

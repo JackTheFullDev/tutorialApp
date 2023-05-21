@@ -11,6 +11,12 @@ export const Login = () => {
     useContext(userContext);
 
    // console.log(tutorials)
+   useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
+
   return (
     <section className="login-page">
       <div className="main-section">
@@ -38,27 +44,6 @@ export const Login = () => {
           </p>
         </div>
       </div>
-
-      {user &&
-        /* 
-        <div>
-          <h2>Hello!</h2>
-          <p>Username: {user.username}</p>
-          <p>id: {user.id}</p>
-          <button onClick={handleLogOut}>Logout</button>
-
-          <h3>Your Tutorials:</h3>
-          {tutorials.map((tutorial) => (
-            <div key={tutorial.tutorial_id}>
-              <p>Title: {tutorial.title}</p>
-              { Render other tutorial information as needed }
-            </div>
-          ))}
-        </div>
-        */
-        navigate("/")
-        
-        }
     </section>
   );
 };
