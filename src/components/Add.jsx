@@ -12,6 +12,8 @@ import { DayPicker } from "./template/DayPicker";
 import { InfoSmallLabel } from "./template/InfoSmallLabel";
 import { userContext } from "./feature/UserContext";
 
+import basicAdd from "../../public/assets/addImgBasic.jpg"
+
 export const Add = () => {
   const handleLevelValue = (event) => {
     const levels = ["Entry", "Beginner", "Junior", "Advanced", "Master"];
@@ -28,7 +30,7 @@ export const Add = () => {
   const [tutorialNumberOfPeople, setTutorialNumberOfPeople] = useState(0);
   const [tutorialLevel, setTutorialLevel] = useState("Entry");
   //image
-  const [selectedImage, setSelectedImage] = useState("");
+  const [selectedImage, setSelectedImage] = useState(basicAdd);
   const fileSelectedHandler = (event) => {
     event.preventDefault();
     const file = event.target.files[0];

@@ -87,12 +87,37 @@ export const UserProvider = ({ children }) => {
 
   //edit
   const editTutorial = (tutorialId, updatedData) => {
+
+    const{tutorialname,
+        tutorialStartDate,
+        tutorialEndDate,
+        tutorialStartTime,
+        tutorialEndTime,
+        tutorialDays,
+        tutorialNumberOfPeople,
+        tutorialLevel,
+        selectedImage,
+        id,
+        tutorialRole,
+        index}=updatedData
+   
     fetch(`http://localhost:3000/tutorials/${tutorialId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updatedData),
+      body: JSON.stringify({tutorialname,
+        tutorialStartDate,
+        tutorialEndDate,
+        tutorialStartTime,
+        tutorialEndTime,
+        tutorialDays,
+        tutorialNumberOfPeople,
+        tutorialLevel,
+        selectedImage,
+        id,
+        tutorialRole,
+        index}),
     })
       .then((response) => response.json())
       .then((data) => {

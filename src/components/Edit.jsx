@@ -9,6 +9,7 @@ import { ImagePicker } from "./template/ImagePicker";
 import { LevelPicker } from "./template/LevelPicker";
 import { DayPicker } from "./template/DayPicker";
 import { InfoSmallLabel } from "./template/InfoSmallLabel";
+import { userContext } from "./feature/UserContext";
 
 export const Edit = ({ data: oldData, index, setShowEdit, showEdit }) => {
   const handleLevelValue = (event) => {
@@ -53,6 +54,9 @@ export const Edit = ({ data: oldData, index, setShowEdit, showEdit }) => {
   };
 
   const { addToLibrary, editAddedCourse } = useContext(addContext);
+  const {editTutorial,user}=useContext(userContext);
+ const{id} = user || null
+ const tutorialRole="user";
   const handleSubmit = (e) => {
     e.preventDefault();
     const tutorialObject = {
@@ -65,10 +69,16 @@ export const Edit = ({ data: oldData, index, setShowEdit, showEdit }) => {
       tutorialNumberOfPeople,
       tutorialLevel,
       selectedImage,
+      id,
+      tutorialRole,
+      index
     };
     
-    editAddedCourse(index, tutorialObject);
+   // editAddedCourse(index, tutorialObject);
+    editTutorial(index,tutorialObject)
+    console.log(id)
     //here fetch update
+
   };
   const handleCheckBox = (event) => {
     const valueOfCheckbox = event.target.value;

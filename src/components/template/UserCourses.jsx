@@ -2,7 +2,7 @@ import { useState } from "react";
 import Edit from "../Edit";
 
 
-export const UserCourses=({tutorialData,deleteTutorial,index})=>
+export const UserCourses=({tutorialData,deleteTutorial,editTutorial,index})=>
 {
     const {end_date,end_time,images,level,max_people,start_date,start_time,title}=tutorialData;
     const handleDelete = (tutorialId) => {
