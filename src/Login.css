@@ -1,0 +1,41 @@
+.login-page
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+.main-section
+{
+    max-width: 500px;
+    background-color: #2E335A;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.main-section div
+{
+    display: flex;
+    flex-direction: column;
+}
+.login-page button
+{
+    background-color: #48CB3D;
+    border:none;
+
+}
+.login-button
+{
+    max-width: 160px;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+}

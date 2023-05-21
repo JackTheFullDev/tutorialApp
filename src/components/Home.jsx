@@ -1,8 +1,9 @@
 import "./Home.css";
 import tutorialData from "../data.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Course } from "./template/Course";
 import { SearchBar } from "./template/SearchBar";
+import axios from "axios"
 
 function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -11,6 +12,21 @@ function Home() {
     setInputValue(newValue);
   };
 
+  useEffect(()=>
+  {
+    const fetchUsers=async()=>
+    {
+      try{
+        const res=await  axios.get("http://localhost:3000/users");
+        console.log(res)
+      }
+      catch(err)
+      {
+        console.log(err)
+      }
+    }
+    fetchUsers()
+  },[])
   return (
     <section className="home-section">
       <div className="home-content">

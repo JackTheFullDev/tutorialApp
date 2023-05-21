@@ -6,9 +6,12 @@ import { Navigation } from "./components/feature/Navigation";
 import { HomeProvider } from "./components/feature/HomeContext";
 import { AddProvider } from "./components/feature/AddContext";
 import { Edit } from "./components/Edit";
+import { Login } from "./Login";
+import { UserProvider } from "./components/feature/UserContext";
 function App() {
   return (
     <div className="App">
+      <UserProvider>
       <HomeProvider>
         <AddProvider>
           <Router>
@@ -18,10 +21,14 @@ function App() {
               <Route path="/library" element={<Library />}></Route>
               <Route path="/add" element={<Add />}></Route>
               <Route path="/library/edit" element={<Edit />}></Route>
+              <Route path="/login" element={<Login />}></Route>
+              
+
             </Routes>
           </Router>
         </AddProvider>
       </HomeProvider>
+      </UserProvider>
     </div>
   );
 }
