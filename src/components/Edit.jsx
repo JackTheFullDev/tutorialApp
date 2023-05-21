@@ -1,4 +1,3 @@
-import { MdWidthFull } from "react-icons/md";
 import "./Add.css";
 import "./style/EditCourse.css";
 import Box from "@mui/material/Box";
@@ -17,28 +16,29 @@ export const Edit = ({ data: oldData, index, setShowEdit, showEdit }) => {
     const currentLevel = event.target.value;
     setLevelState(currentLevel);
     setTutorialLevel(levels[currentLevel]);
-  };
+  }; // IMPORTANT TO DISPLAY LEVEL IN EDIT SECTION
   // console.log(oldData)
-  const [tutorialname, setTutorialName] = useState(oldData.tutorialname);
+  const {end_date,end_time,images,level,max_people,start_date,start_time,title,days}=oldData;
+  const [tutorialname, setTutorialName] = useState(title);
   const [tutorialStartDate, setTutorialStartDate] = useState(
-    oldData.tutorialStartDate
+    start_date
   );
   const [tutorialEndDate, setTutorialEndDate] = useState(
-    oldData.tutorialEndDate
+    end_date
   );
   const [tutorialStartTime, setTutorialStartTime] = useState(
-    oldData.tutorialStartTime
+    start_time
   );
   const [tutorialEndTime, setTutorialEndTime] = useState(
-    oldData.tutorialEndTime
+    end_time
   );
-  const [tutorialDays, setTutorialDays] = useState(oldData.tutorialDays);
+  const [tutorialDays, setTutorialDays] = useState(days);
   const [tutorialNumberOfPeople, setTutorialNumberOfPeople] = useState(
-    oldData.tutorialNumberOfPeople
+    max_people
   );
-  const [tutorialLevel, setTutorialLevel] = useState(oldData.tutorialLevel);
+  const [tutorialLevel, setTutorialLevel] = useState(level);
   //image
-  const [selectedImage, setSelectedImage] = useState(oldData.selectedImage);
+  const [selectedImage, setSelectedImage] = useState(images);
   const fileSelectedHandler = (event) => {
     event.preventDefault();
     const file = event.target.files[0];
@@ -66,8 +66,9 @@ export const Edit = ({ data: oldData, index, setShowEdit, showEdit }) => {
       tutorialLevel,
       selectedImage,
     };
-    // console.log(tutorialObject); // here new update
+    
     editAddedCourse(index, tutorialObject);
+    //here fetch update
   };
   const handleCheckBox = (event) => {
     const valueOfCheckbox = event.target.value;

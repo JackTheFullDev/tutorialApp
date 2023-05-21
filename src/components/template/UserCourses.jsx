@@ -1,13 +1,16 @@
+import { useState } from "react";
+import Edit from "../Edit";
 
 
-export const UserCourses=({tutorialData,setShowEdit,deleteTutorial,showEdit,index})=>
+export const UserCourses=({tutorialData,deleteTutorial,index})=>
 {
     const {end_date,end_time,images,level,max_people,start_date,start_time,title}=tutorialData;
     const handleDelete = (tutorialId) => {
         // Call the deleteTutorial function with the tutorial ID
         deleteTutorial(tutorialId);
       };
-      console.log(typeof(deleteTutorial));
+      const [showEdit,setShowEdit]=useState(false);
+     
     return (
         <div className="tutorial-component">
           <img src={images} alt={title} />
@@ -47,7 +50,7 @@ export const UserCourses=({tutorialData,setShowEdit,deleteTutorial,showEdit,inde
           {showEdit && (
             <div className="edit-content">
               <Edit
-                data={data}
+                data={tutorialData}
                 index={index}
                 showEdit={showEdit}
                 setShowEdit={setShowEdit}
