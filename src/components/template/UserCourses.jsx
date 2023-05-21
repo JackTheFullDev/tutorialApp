@@ -4,20 +4,21 @@ import Edit from "../Edit";
 
 export const UserCourses=({tutorialData,deleteTutorial,editTutorial,index})=>
 {
-    const {end_date,end_time,images,level,max_people,start_date,start_time,title}=tutorialData;
+    const {days,end_date,end_time,images,level,max_people,start_date,start_time,title}=tutorialData;
     const handleDelete = (tutorialId) => {
-        // Call the deleteTutorial function with the tutorial ID
+        
         deleteTutorial(tutorialId);
       };
       const [showEdit,setShowEdit]=useState(false);
      
+      console.log(tutorialData)
     return (
         <div className="tutorial-component">
           <img src={images} alt={title} />
           <div className="tutorial-complex-data">
             <p>Start date: {start_date}</p>
             <p>End date: {end_date}</p>
-            <p>day/s:  </p>
+            <p>day/s: {days} </p>
             <p>
               Time:{start_time}-{end_time}
             </p>

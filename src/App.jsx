@@ -7,8 +7,9 @@ import { HomeProvider } from "./components/feature/HomeContext";
 import { AddProvider } from "./components/feature/AddContext";
 import { Edit } from "./components/Edit";
 import { Login } from "./Login";
+import { Registration } from "./Registration";
 import { UserProvider } from "./components/feature/UserContext";
-import { Registration } from "../Registration";
+
 function App() {
   return (
     <div className="App">

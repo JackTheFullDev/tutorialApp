@@ -13,19 +13,17 @@ import { NavigationLink } from "../template/NavigationLink";
 import { ThanksDiv } from "../template/thanksDiv";
 import { userContext } from "./UserContext";
 export const Navigation = () => {
-  const iconStyle = { color: "white", fontSize: "1.5em" }; 
-  
-  const [currentPage, setCurrentPage] = useState(1);
- 
-  const {user,handleLogOut} =
-  useContext(userContext);
+  const iconStyle = { color: "white", fontSize: "1.5em" };
 
-  //console.log(user,)
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const { user, handleLogOut } = useContext(userContext);
+
   return (
     <section className="navigation">
       <div className="user-navigation">
         <img id="user-profile-img" src={reactLogo} />
-       {user&& <p id="user-name">Hi {user.username}</p>}
+        {user && <p id="user-name">Hi {user.username}</p>}
       </div>
       <ul>
         <NavigationLink
@@ -54,31 +52,52 @@ export const Navigation = () => {
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}
         />
-        {user?<li>
-          <div className="navigation-content" style={{display:"flex", alignItems:"center",justifyContent:"center" ,paddingRight:"40px",gap:"10px",cursor:"pointer"}}>
-        <CiLogout style={{fontSize:"25px"}}/>
-        <button style={{border:"none",backgroundColor:"transparent",color:"white"}} onClick={()=>handleLogOut()}>logout</button>
-        </div>
-        </li>:
-        <>
-         <NavigationLink
-          to={"/login"}
-          icon={<FiLogIn style={iconStyle} />}
-          pageNr={4}
-          page={"login"}
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-        />  
-        <NavigationLink
-          to={"/registration"}
-          icon={<MdAppRegistration style={iconStyle} />}
-          pageNr={5}
-          page={"registration"}
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-        />
-        </>}
-        
+        {user ? (
+        <li style={{display:"flex",cursor:"pointer"}}>
+            <div
+              className="navigation-content"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                paddingRight: "10px",
+                gap: "10px",
+                cursor: "pointer",
+              }}
+            >
+              <CiLogout style={{ fontSize: "25px" }} />
+              <button
+                style={{
+                  border: "none",
+                  backgroundColor: "transparent",
+                  color: "white",
+                }}
+                onClick={() => handleLogOut()}
+              >
+                logout
+              </button>
+            </div>
+          </li>
+        ) : (
+          <>
+            <NavigationLink
+              to={"/login"}
+              icon={<FiLogIn style={iconStyle} />}
+              pageNr={4}
+              page={"login"}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            />
+            <NavigationLink
+              to={"/registration"}
+              icon={<MdAppRegistration style={iconStyle} />}
+              pageNr={5}
+              page={"sign up"}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            />
+          </>
+        )}
       </ul>
       <ThanksDiv />
     </section>

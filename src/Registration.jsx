@@ -1,5 +1,7 @@
 import { useContext } from "react";
-import { userContext } from "./src/components/feature/UserContext";
+import { userContext } from "./components/feature/UserContext";
+import { Link } from "react-router-dom";
+
 
 export const Registration=()=>
 {
@@ -38,7 +40,9 @@ export const Registration=()=>
           <button className="login-button" onClick={() => registerUser(userNameRegistration,userPassword)}>Registration</button>
           <div>
             <p>
-              New user? <button style={{color:"#48CB3D",backgroundColor:"transparent"}}>Join us</button>
+              Old Friend? <Link to={"/login"} style={{ color: "#48CB3D" }}>
+             Log In
+            </Link>
             </p>
           </div>
         </div>

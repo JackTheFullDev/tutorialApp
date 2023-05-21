@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
 import { userContext } from "./components/feature/UserContext";
@@ -10,8 +10,8 @@ export const Login = () => {
   const { user, handleLogin, setUsername, setPassword } =
     useContext(userContext);
 
-   // console.log(tutorials)
-   useEffect(() => {
+  // console.log(tutorials)
+  useEffect(() => {
     if (user) {
       navigate("/");
     }
@@ -20,7 +20,7 @@ export const Login = () => {
   return (
     <section className="login-page">
       <div className="main-section">
-        <h1 style={{color:"#48CB3D"}}>CodeMasterAcademy</h1>
+        <h1 style={{ color: "#48CB3D" }}>CodeMasterAcademy</h1>
         <h3>Unlock your potential with CodeMasterAcademy</h3>
         <div>
           <label>User name</label>
@@ -37,10 +37,15 @@ export const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button className="login-button" onClick={() => handleLogin()}>Login</button>
+        <button className="login-button" onClick={() => handleLogin()}>
+          Login
+        </button>
         <div>
           <p>
-            New user? <button style={{color:"#48CB3D",backgroundColor:"transparent"}}>Join us</button>
+            New user?{" "}
+            <Link to={"/registration"} style={{ color: "#48CB3D" }}>
+              Join us
+            </Link>
           </p>
         </div>
       </div>

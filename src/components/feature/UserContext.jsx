@@ -22,7 +22,7 @@ export const UserProvider = ({ children }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username, password ,userEmail}),
     })
       .then((response) => response.json())
       .then((data) => {

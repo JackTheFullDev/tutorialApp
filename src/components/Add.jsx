@@ -45,7 +45,7 @@ export const Add = () => {
   useContext(userContext);
  
   
-  const{id}=user || null;
+  const{id}=user|| "" ;
   //console.log(id)
 
   let tutorial_role="user";
