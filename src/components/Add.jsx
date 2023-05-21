@@ -2,7 +2,7 @@ import { MdWidthFull } from "react-icons/md";
 import "./Add.css";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import { addContext } from "./feature/AddContext";
@@ -12,7 +12,8 @@ import { DayPicker } from "./template/DayPicker";
 import { InfoSmallLabel } from "./template/InfoSmallLabel";
 import { userContext } from "./feature/UserContext";
 
-import basicAdd from "../../public/assets/addImgBasic.jpg"
+import basicAdd from "../../public/assets/addImgBasic.jpg";
+import { useNavigate } from "react-router-dom";
 
 export const Add = () => {
   const handleLevelValue = (event) => {
@@ -41,14 +42,11 @@ export const Add = () => {
     reader.readAsDataURL(file);
     //end of file
   };
-  const {user} =
-  useContext(userContext);
- 
-  
-  const{id}=user|| "" ;
-  //console.log(id)
+  const { user } = useContext(userContext);
 
-  let tutorial_role="user";
+  const { id } = user || "";
+
+  let tutorial_role = "user";
   const { addToLibrary } = useContext(addContext);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -62,7 +60,7 @@ export const Add = () => {
       tutorialNumberOfPeople,
       tutorialLevel,
       selectedImage,
-      levelState
+      levelState,
     };
     addToLibrary(tutorialObject);
     console.log(tutorialObject);
@@ -72,8 +70,8 @@ export const Add = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(
-       { tutorialname,
+      body: JSON.stringify({
+        tutorialname,
         tutorialStartDate,
         tutorialEndDate,
         tutorialStartTime,
@@ -83,10 +81,9 @@ export const Add = () => {
         tutorialLevel,
         selectedImage,
         levelState,
-      id,
-      tutorial_role}
-
-      ),
+        id,
+        tutorial_role,
+      }),
       // body: JSON.stringify({ username, password }),
     })
       .then((response) => {
@@ -133,6 +130,14 @@ export const Add = () => {
       name: "Saturday",
     },
   ];
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, user);
   return (
     <section className="add-section">
       <form onSubmit={handleSubmit}>
