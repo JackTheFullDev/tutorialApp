@@ -18,7 +18,7 @@ export const AddCourse = ({ addData, deleteCourseFunc, index }) => {
     tutorialLevel,
     
   } = addData._addTutorialData;
- //napraw by addData zwracalo to samo co data ulatwi to stworzenie globalnego componentu
+ 
   
   return (
     <div className="tutorial-component">

@@ -14,6 +14,8 @@ export const UserProvider=({children})=>
     const [tutorials, setTutorials] = useState([]);
     //registration
 
+    
+   
     const [userNameRegistration,setUserNameRegistration]=useState(null);
     const [userEmail,setUserEmail]=useState(null);
     const [userPassword,setUserPassword]=useState(null);

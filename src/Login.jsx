@@ -7,7 +7,7 @@ export const Login = () => {
   //navigate
   const navigate = useNavigate();
 
-  const { user, handleLogin, setUsername, setPassword ,tutorials} =
+  const { user, handleLogin, setUsername, setPassword } =
     useContext(userContext);
 
    // console.log(tutorials)

@@ -5,12 +5,18 @@ import { addContext } from "./feature/AddContext";
 
 import { LibraryCourse } from "./template/LibraryCourse";
 import { AddCourse } from "./template/AddCourse";
+import { userContext } from "./feature/UserContext";
+import { UserCourses } from "./template/UserCourses";
 
 export const Library = () => {
   const { tutorialData, removeFromLibrary } = useContext(HomeContext);
   const { addTutorialData, removeAddedFromLibrary } = useContext(addContext);
 
-  
+  const {user,tutorials} =
+  useContext(userContext);
+
+  console.log(tutorials);
+ 
   return (
     <section className="home-section">
       <h1>Library</h1>
@@ -42,6 +48,24 @@ export const Library = () => {
             );
           })}
         </div>
+      {tutorials.map((data,index)=>
+      {
+        return(
+          <img src={data.images}/>
+        )
+      })}
+        {tutorials.map((data, index) => {
+            return (
+              <>
+                <UserCourses
+                  tutorialData={data}
+                  key={index}
+                  deleteCourseFunc={removeAddedFromLibrary}
+                  index={index}
+                ></UserCourses>
+              </>
+            );
+          })}
       </div>
     </section>
   );
