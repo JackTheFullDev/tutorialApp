@@ -8,6 +8,7 @@ import { AddProvider } from "./components/feature/AddContext";
 import { Edit } from "./components/Edit";
 import { Login } from "./Login";
 import { UserProvider } from "./components/feature/UserContext";
+import { Registration } from "../Registration";
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
               <Route path="/add" element={<Add />}></Route>
               <Route path="/library/edit" element={<Edit />}></Route>
               <Route path="/login" element={<Login />}></Route>
+              <Route path="/registration" element={<Registration/>}></Route>
               
 
             </Routes>
