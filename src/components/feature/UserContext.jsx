@@ -7,7 +7,7 @@ export const UserProvider = ({ children }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
-  const [userTutorial, setUserTutorial] = useState(null);
+ // const [userTutorial, setUserTutorial] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [tutorials, setTutorials] = useState([]);
   //registration
@@ -16,7 +16,6 @@ export const UserProvider = ({ children }) => {
   const [userEmail, setUserEmail] = useState(null);
   const [userPassword, setUserPassword] = useState(null);
   const registerUser = (username, password) => {
-    // Make a POST request to your backend API endpoint to register the user
     fetch("http://localhost:3000/register", {
       method: "POST",
       headers: {
@@ -25,15 +24,6 @@ export const UserProvider = ({ children }) => {
       body: JSON.stringify({ username, password ,userEmail}),
     })
       .then((response) => response.json())
-      .then((data) => {
-        // Handle the response from the backend
-        if (data.success) {
-          alert("Registration successful!");
-          // Redirect the user to the login page or perform any other necessary actions
-        } else {
-          alert("Registration failed. Please try again.");
-        }
-      })
       .catch((error) => {
         console.error("Error:", error);
         alert("An error occurred. Please try again later.");

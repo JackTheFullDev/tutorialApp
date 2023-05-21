@@ -19,7 +19,7 @@ export const Registration = () => {
     }
   }, [user, navigate]);
   return (
-    <section className="login-page">
+    <form className="login-page">
       <div className="main-section">
         <h1 style={{ color: "#48CB3D" }}>CodeMasterAcademy</h1>
         <h3>Unlock your potential with CodeMasterAcademy</h3>
@@ -49,8 +49,10 @@ export const Registration = () => {
         <button
           className="login-button"
           onClick={() => registerUser(userNameRegistration, userPassword)}
+          type="submit"
         >
           Registration
+          
         </button>
         <div>
           <p>
@@ -61,6 +63,6 @@ export const Registration = () => {
           </p>
         </div>
       </div>
-    </section>
+    </form>
   );
 };

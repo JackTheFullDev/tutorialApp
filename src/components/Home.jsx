@@ -3,7 +3,7 @@ import tutorialData from "../data.json";
 import { useEffect, useState } from "react";
 import { Course } from "./template/Course";
 import { SearchBar } from "./template/SearchBar";
-import axios from "axios"
+import axios from "axios";
 
 function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -12,21 +12,15 @@ function Home() {
     setInputValue(newValue);
   };
 
-  useEffect(()=>
-  {
-    const fetchUsers=async()=>
-    {
-      try{
-        const res=await  axios.get("http://localhost:3000/users");
-        //console.log(res)
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+      } catch (err) {
+        console.log(err);
       }
-      catch(err)
-      {
-        console.log(err)
-      }
-    }
-    fetchUsers()
-  },[])
+    };
+    fetchUsers();
+  }, []);
   return (
     <section className="home-section">
       <div className="home-content">
