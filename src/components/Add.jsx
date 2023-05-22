@@ -63,7 +63,6 @@ export const Add = () => {
       levelState,
     };
     addToLibrary(tutorialObject);
-    console.log(tutorialObject);
 
     fetch("http://localhost:3000/tutorials", {
       method: "POST",

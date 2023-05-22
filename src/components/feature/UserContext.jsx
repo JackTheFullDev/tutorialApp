@@ -7,7 +7,7 @@ export const UserProvider = ({ children }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
- // const [userTutorial, setUserTutorial] = useState(null);
+  // const [userTutorial, setUserTutorial] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [tutorials, setTutorials] = useState([]);
   //registration
@@ -21,7 +21,7 @@ export const UserProvider = ({ children }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password ,userEmail}),
+      body: JSON.stringify({ username, password, userEmail }),
     })
       .then((response) => response.json())
       .catch((error) => {
@@ -29,9 +29,6 @@ export const UserProvider = ({ children }) => {
         alert("An error occurred. Please try again later.");
       });
   };
-
-  //
-
   useEffect(() => {
     // Fetch the user's tutorials after a successful login
     if (user) {
@@ -40,7 +37,7 @@ export const UserProvider = ({ children }) => {
         .then((data) => setTutorials(data))
         .catch((error) => console.error("Error fetching tutorials:", error));
     }
-  }, [user,tutorials]);
+  }, [user, tutorials]);
 
   const handleLogin = async () => {
     try {
@@ -77,26 +74,28 @@ export const UserProvider = ({ children }) => {
 
   //edit
   const editTutorial = (tutorialId, updatedData) => {
+    const {
+      tutorialname,
+      tutorialStartDate,
+      tutorialEndDate,
+      tutorialStartTime,
+      tutorialEndTime,
+      tutorialDays,
+      tutorialNumberOfPeople,
+      tutorialLevel,
+      selectedImage,
+      id,
+      tutorialRole,
+      index,
+    } = updatedData;
 
-    const{tutorialname,
-        tutorialStartDate,
-        tutorialEndDate,
-        tutorialStartTime,
-        tutorialEndTime,
-        tutorialDays,
-        tutorialNumberOfPeople,
-        tutorialLevel,
-        selectedImage,
-        id,
-        tutorialRole,
-        index}=updatedData
-   
     fetch(`http://localhost:3000/tutorials/${tutorialId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({tutorialname,
+      body: JSON.stringify({
+        tutorialname,
         tutorialStartDate,
         tutorialEndDate,
         tutorialStartTime,
@@ -107,13 +106,12 @@ export const UserProvider = ({ children }) => {
         selectedImage,
         id,
         tutorialRole,
-        index}),
+        index,
+      }),
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle the response from the backend
         console.log("Tutorial updated:", data);
-        // Perform any necessary actions after the tutorial has been updated
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -128,15 +126,18 @@ export const UserProvider = ({ children }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle the response from the backend
         console.log("Tutorial deleted:", data);
-        // Perform any necessary actions after the tutorial has been deleted
       })
       .catch((error) => {
         console.error("Error:", error);
         alert("An error occurred. Please try again later.");
       });
   };
+  //addToMYSQL
+  const addToMysql = () => {
+    //rewrite here fetch from add.jsx
+  };
+  //register for course
 
   let value = {
     setUsername,
