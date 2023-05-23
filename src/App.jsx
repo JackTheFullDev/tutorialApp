@@ -14,23 +14,21 @@ function App() {
   return (
     <div className="App">
       <UserProvider>
-      <HomeProvider>
-        <AddProvider>
-          <Router basename="/tutorialApp">
-            <Navigation />
-            <Routes>
-              <Route path="/" element={<Home />}></Route>
-              <Route path="/library" element={<Library />}></Route>
-              <Route path="/add" element={<Add />}></Route>
-              <Route path="/library/edit" element={<Edit />}></Route>
-              <Route path="/login" element={<Login />}></Route>
-              <Route path="/registration" element={<Registration/>}></Route>
-              
-
-            </Routes>
-          </Router>
-        </AddProvider>
-      </HomeProvider>
+        <HomeProvider>
+          <AddProvider>
+            <Router basename="/tutorialApp">
+              <Navigation />
+              <Routes>
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/library" element={<Library />}></Route>
+                <Route path="/add" element={<Add />}></Route>
+                <Route path="/library/edit" element={<Edit />}></Route>
+                <Route path="/login" element={<Login />}></Route>
+                <Route path="/registration" element={<Registration />}></Route>
+              </Routes>
+            </Router>
+          </AddProvider>
+        </HomeProvider>
       </UserProvider>
     </div>
   );
