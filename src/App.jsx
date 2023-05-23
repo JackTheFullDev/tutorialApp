@@ -16,7 +16,7 @@ function App() {
       <UserProvider>
       <HomeProvider>
         <AddProvider>
-          <Router>
+          <Router basename="/tutorialApp">
             <Navigation />
             <Routes>
               <Route path="/" element={<Home />}></Route>
