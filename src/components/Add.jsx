@@ -86,11 +86,11 @@ export const Add = () => {
       // body: JSON.stringify({ username, password }),
     })
       .then((response) => {
-        console.log(response.data); // Handle the response as needed
+        console.log(response.data); 
       })
       .catch((error) => {
         console.error("Error creating tutorial:", error);
-        // Handle the error as needed
+       
       });
   };
   const handleCheckBox = (event) => {
@@ -132,8 +132,9 @@ export const Add = () => {
 
   const navigate = useNavigate();
 
+  let testUser=false; //here test version to see how add form look like in normal version there is autonavigate to login page
   useEffect(() => {
-    if (!user) {
+    if (!user && testUser) {
       navigate("/login");
     }
   }, user);

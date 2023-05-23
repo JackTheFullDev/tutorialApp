@@ -40,11 +40,11 @@ export const Course = (tutorialCourseData) => {
        body: JSON.stringify({ tutorialName, startDate,endDate, startTime, endTime,daysToString,amount,maxAmount,level,image,id,tutorial_role}),
     })
       .then((response) => {
-        console.log(response.data); // Handle the response as needed
+      alert("you singed up for a course")
       })
       .catch((error) => {
         console.error("Error creating tutorial:", error);
-        // Handle the error as needed
+        
       });
   }
   return (

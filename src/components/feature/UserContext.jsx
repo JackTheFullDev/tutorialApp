@@ -112,6 +112,7 @@ export const UserProvider = ({ children }) => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Tutorial updated:", data);
+        alert("edited")
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -127,17 +128,13 @@ export const UserProvider = ({ children }) => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Tutorial deleted:", data);
+        alert("succes to delete");
       })
       .catch((error) => {
         console.error("Error:", error);
         alert("An error occurred. Please try again later.");
       });
   };
-  //addToMYSQL
-  const addToMysql = () => {
-    //rewrite here fetch from add.jsx
-  };
-  //register for course
 
   let value = {
     setUsername,

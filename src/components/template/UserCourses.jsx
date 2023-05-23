@@ -19,10 +19,8 @@ export const UserCourses = ({
     start_date,
     start_time,
     title,
-    tutorial_role
+    tutorial_role,
   } = tutorialData;
-
-  console.log(tutorial_role)
   const handleDelete = (tutorialId) => {
     deleteTutorial(tutorialId);
   };
@@ -49,12 +47,32 @@ export const UserCourses = ({
             <p>12 h video</p>
             <p>13 Likes</p>
           </div>
-          <ButtonTemplateEdit someFunction={setShowEdit} param={showEdit} textButton={"edit"} style={"yellow"}/>
-          <ButtonTemplateDelete someFunction={handleDelete} param={index} textButton={"delete"} style={"red"}/>
-          resign!!!!!!!!!!!!!!!!
+          {tutorial_role === "student" ? (
+            <ButtonTemplateDelete
+              someFunction={handleDelete}
+              param={index}
+              textButton={"resign"}
+              style={"yellow"}
+            />
+          ) : (
+            <>
+              <ButtonTemplateEdit
+                someFunction={setShowEdit}
+                param={showEdit}
+                textButton={"edit"}
+                style={"yellow"}
+              />
+              <ButtonTemplateDelete
+                someFunction={handleDelete}
+                param={index}
+                textButton={"delete"}
+                style={"red"}
+              />
+            </>
+          )}
         </div>
       </div>
-      
+
       {showEdit && (
         <div className="edit-content">
           <Edit

@@ -32,8 +32,7 @@ export const Library = () => {
           })}
         </div>
         
-        <div className="grid-with-home-content"></div>
-        {user && <p>Content you created</p>}
+        <div className="grid-with-home-content">
         {user &&
           tutorials.map((data, index) => {
             return (
@@ -49,6 +48,7 @@ export const Library = () => {
               </>
             );
           })}
+          </div>
       </div>
     </section>
   );
